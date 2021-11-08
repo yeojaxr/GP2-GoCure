@@ -1,0 +1,10 @@
+/* Konfigurasi Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Konfigurasi Font */
+body {
+    font-family: 'Nunito', sans-serif;
+}
