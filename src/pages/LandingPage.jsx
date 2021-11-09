@@ -30,9 +30,10 @@ export default function LandingPage() {
       </div>
       <div className="py-60">
         <div className="flex flex-row justify-between items-center gap-x-8">
-          <FeatureCard title="Videos" />
-          <FeatureCard title="Blogs" />
-          <FeatureCard title="Experts" />
+          {/* Ganti judul video dan foto disini */}
+          <FeatureCard title="Videos" pic="03-video.svg"/>
+          <FeatureCard title="Experts" pic="02-experts.svg"/>
+          <FeatureCard title="Blogs" pic="01-blog.svg"/>
         </div>
       </div>
     </div>

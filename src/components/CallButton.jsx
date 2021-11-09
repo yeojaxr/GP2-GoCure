@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CallButton = () => {
     return (
         <div>
-            <Link to="/" className="py-4 px-8 bg-blue-800 rounded-md text-white text-l font-bold">
+            <Link to="/" className="py-4 px-8 bg-purple-600 rounded-md text-white text-l font-bold">
                 Sign in
             </Link>
         </div>
