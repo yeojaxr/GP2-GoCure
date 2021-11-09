@@ -1,26 +1,25 @@
 import React from 'react'
 import Form from '../components/Form'
 import SmallButton from '../components/SmallButton'
-import LoginImg from '../images/home/video.svg'
+import LoginImg from '../images/register.svg'
 
 const Register = () => {
     return (
-        <div className="bg-purple-700 h-full">
-            <div className="px-64 py-12">
-                <div className="rounded-2xl bg-white h-full grid grid-cols-2">
-                    <img className="py-52 px-16" src={LoginImg} alt="" />
-                    <div className="pt-16 pr-16">
-                        <div className="pb-10 font-bold text-2xl">
-                            Register
+        <div className="bg-purple-700 h-full flex">
+            <div className="px-64 py-12 flex items-center">
+                <div className="rounded-2xl bg-white h-full flex items-center">
+                    <div className="grid grid-cols-2">
+                        <img className="py-40 pl-16 pr-8" src={LoginImg} alt="" />
+                        <div className="pt-16 pl-8 pr-16">
+                            <Form title="Name" desc="John Doe" />
+                            <Form title="Email" desc="johndoe@mail.com" />
+                            <Form title="Password" desc="*********" />
+                            <Form title="Confirm Password" desc="*********" />
+                            <div className="pt-10">
+                                <SmallButton title="Register" />
+                            </div>
+                            
                         </div>
-                        <Form title="Name" desc="John Doe" />
-                        <Form title="Email" desc="johndoe@mail.com" />
-                        <Form title="Password" desc="*********" />
-                        <Form title="Confirm Password" desc="*********" />
-                        <div className="pt-10">
-                            <SmallButton title="Register" />
-                        </div>
-                        
                     </div>
                 </div>
 

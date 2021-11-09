@@ -1,24 +1,23 @@
 import React from 'react'
 import Form from '../components/Form'
 import SmallButton from '../components/SmallButton'
-import LoginImg from '../images/home/video.svg'
+import LoginImg from '../images/sign-in.svg'
 
 const Login = () => {
     return (
-        <div className="bg-purple-700 h-screen">
-            <div className="px-64 py-12">
-                <div className="rounded-2xl bg-white h-full grid grid-cols-2">
-                    <img className="py-40 px-16" src={LoginImg} alt="" />
-                    <div className="pt-20 pr-16">
-                        <div className="pb-10 font-bold text-2xl">
-                            Sign In
+        <div className="bg-purple-700 h-screen flex">
+            <div className="px-64 py-16 flex items-center">
+                <div className="rounded-2xl bg-white h-full flex items-center">
+                    <div className="grid grid-cols-2">
+                        <img className="py-24 pl-16 pr-8" src={LoginImg} alt="" />
+                        <div className="pt-16 pl-8 pr-16">
+                            <Form title="Email" desc="johndoe@mail.com" />
+                            <Form title="Password" desc="*********" />
+                            <div className="pt-10">
+                                <SmallButton title="Sign In" />
+                            </div>
+                            
                         </div>
-                        <Form title="Email" desc="johndoe@mail.com" />
-                        <Form title="Password" desc="*********" />
-                        <div className="pt-10">
-                            <SmallButton title="Sign In" />
-                        </div>
-                        
                     </div>
                 </div>
 
