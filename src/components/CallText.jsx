@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CallText = () => {
     return (
         <div>
-            <Link to="/" className="py-4 px-8 bg-transparent rounded-md text-blue-800 text-xl font-bold">
+            <Link to="/" className="py-4 px-0 bg-transparent rounded-md text-blue-800 text-l font-bold">
                 Create account here
             </Link>
         </div>
