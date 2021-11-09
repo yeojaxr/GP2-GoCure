@@ -1,7 +1,8 @@
 import CallButton from "../components/CallButton";
 import CallText from "../components/CallText";
-import HeadImg from "../images/home/landing-header.svg";
+import HeadImg from "../images/home/header.svg";
 import FeatureCard from "../components/FeatureCard";
+import ProfileImg from "../images/home/profile.svg";
 
 import React from "react";
 
@@ -20,7 +21,6 @@ export default function LandingPage() {
             clinically-backed digital tools for proactively
             improving mental wellbeing.
           </p>
-          {/* <div className="pt-20 flex flex-row gap-x-8"> */}
           <div className="pt-16 flex flex-row gap-x-8">
             <CallButton />
             <CallText />
@@ -40,7 +40,7 @@ export default function LandingPage() {
               improving mental wellbeing.
             </p>
           </div>
-          <img className="h-80" src={HeadImg} alt="" />
+          <img className="h-80" src={ProfileImg} alt="" />
         </div>
       </div>
       <div className="py-60">
