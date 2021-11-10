@@ -1,11 +1,11 @@
 import React from 'react'
-import ImageOne from '../images/food-1.jpg'
+import {Link} from "react-router-dom"
 
 const Card = (props) => {
     return (
-        <div>
+        <Link to={`/blogs/${props.id}`}>
             <div className="">
-                <img src={ImageOne} alt="egg" className="h-20 md:h-40 lg:h-80 rounded" />
+                <img src={props.image} alt="egg" className="object-cover h-20 md:h-40 lg:h-80 rounded" />
             </div>
             <div className="py-4">
                 <div className="font-bold text-gray-900 text-lg mb-2">
@@ -21,7 +21,7 @@ const Card = (props) => {
                 </span>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

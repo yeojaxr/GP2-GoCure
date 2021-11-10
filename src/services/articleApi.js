@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 
 export default function useFetchArticle() {
   const isMounted = useRef(false);
-  const [data, setData] = useState(null);
+  const [article, setData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -14,8 +14,8 @@ export default function useFetchArticle() {
         );
         if (response.ok) {
           const json = await response.json();
-          const article = json.Result.Resources.Resource;
-          setData(article);
+          const data = json.Result.Resources.Resource;
+          setData(data);
         } else {
           throw response;
         }
@@ -26,5 +26,5 @@ export default function useFetchArticle() {
     init();
   }, []);
 
-  return { data, error };
+  return { article, error };
 }

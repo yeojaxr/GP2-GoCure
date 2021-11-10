@@ -1,13 +1,11 @@
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
-import React from 'react'
-import useFetchArticle from "../services/articleApi"
+import React from 'react';
+import useFetchArticle from "../services/articleApi";
 
 const Blog = () => {
-    const { data: article, error } = useFetchArticle();    
-    console.log(article);
-    console.log(error);
+    const { article } = useFetchArticle(); 
 
     return (
         <div>
@@ -15,7 +13,7 @@ const Blog = () => {
                 <div className="">
                     <Header name="Blogs" pic="blog-header.svg" />
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-4">
-                        {article && article.map(art => <Card key={art.Id} title={art.Title}/>)}
+                        {article && article.map(art => <Card key={art.Id} title={art.Title} image={art.ImageUrl} id={art.Id}/>)}
                     </div>
                 </div>
                 <div className="flex items-center sticky top-0 h-screen">

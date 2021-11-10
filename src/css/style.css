@@ -1,0 +1,27 @@
+.fixxed {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+}
+
+.bg-extra-content {
+    background-color: #f0f5ff;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #4e4e4e;
+    border-radius: 8px;
+}
+
+.bg-screen-blob {
+    background-image: url('../images/bg-screen.svg');
+    background-size: cover;
+}
