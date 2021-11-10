@@ -9,12 +9,12 @@ import Register from "./pages/Register";
 function App() {
   return (
     <>
-      {/* <LandingPage /> */}
+      <LandingPage />
       {/* <Article /> */}
       {/* <Login /> */}
       {/* <Register /> */}
       {/* <Blog /> */}
-      <Expert />
+      {/* <Expert /> */}
     </>
   );
 }
