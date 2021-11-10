@@ -14,19 +14,12 @@ import Expert from "./pages/Expert";
 function App() {
   return (
     <>
-      <main>
-        <Routes>
-          <Route path="/" element={<LandingPage />}/>
-          <Route path="/blogs" element={<Blog />}/>
-          <Route path="/blogs/:id" element={<Article />}/>
-          <Route path="/videos" element={<Videos />}/>
-          <Route path="/videos/:id" element={<Videoplay />}/>
-          <Route path="/experts" element={<Expert />}/>
-          <Route path="/experts/:id" element={<Expert />}/>
-          <Route path="/login" element={<Login />}/>
-          <Route path="/register" element={<Register />}/>
-        </Routes>
-      </main>
+      <LandingPage />
+      {/* <Article /> */}
+      {/* <Login /> */}
+      {/* <Register /> */}
+      {/* <Blog /> */}
+      {/* <Expert /> */}
     </>
   );
 }
