@@ -1,9 +1,10 @@
 import HeadImg from "../images/home/header.svg";
-import FeatureCard from "../components/FeatureCard";
 import ProfileImg from "../images/home/profile.svg";
 import FeatureImg from "../images/home/video.svg";
-import React from "react";
+import FeatureBlog from "../images/home/blogs.svg";
+import FeatureExpert from "../images/home/experts.svg";
 import FeatureList from "../components/FeatureList";
+import React, { useState } from "react";
 import LogoImg from '../images/logo.svg';
 import SmallButton from "../components/SmallButton";
 import SmallText from "../components/SmallText";
@@ -11,9 +12,10 @@ import "../css/style.css";
 import BgImg from "../images/bg-wave.svg";
 
 export default function LandingPage() {
+  const [image, setImage] = useState(FeatureImg)
+
   return (
     <div>
-
       <nav className="bg-white py-1 fixxed px-48 shadow-sm">
           <div className="">
               <div class="relative flex items-center justify-between h-16">
@@ -76,18 +78,20 @@ export default function LandingPage() {
         </div>
       </div> */}
 
-      <img src={BgImg} className="w-full" />
+      <img src={BgImg} className="w-full" alt=""/>
 
       <div className="bg-extra-content px-48 pb-60 flex flex-row justify-between items-center gap-x-12">
         <div className="flex flex-col mr-8">
           <div className="font-bold text-4xl">
             Here's our content that you might like
           </div>
-          <FeatureList title="Blogs" category="blogs"/>
-          <FeatureList title="Videos" category="videos"/>
-          <FeatureList title="Experts" category="experts"/>
+          <div onClick={() => setImage(FeatureImg)}><FeatureList title="Blogs" category="blogs"/></div>
+          <div onClick={() => setImage(FeatureBlog)}><FeatureList title="Videos" category="videos"/></div>
+          <div onClick={() => setImage(FeatureExpert)}><FeatureList title="Experts" category="experts"/></div>
+          {/* <FeatureList title="Videos" category="videos"/>
+          <FeatureList title="Experts" category="experts"/> */}
         </div>
-        <img className="w-96" src={FeatureImg} alt="" />
+        <img className="w-96" src={image} alt="" />
       </div>
       
       <div className="px-48 py-60 flex flex-row justify-between items-center gap-x-12">
@@ -101,8 +105,6 @@ export default function LandingPage() {
         </div>
         <img className="w-96" src={FeatureImg} alt="" />
       </div>
-
-      
     </div>
   );
 }
