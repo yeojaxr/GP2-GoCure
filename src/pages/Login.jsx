@@ -19,12 +19,10 @@ const Login = () => {
                             <Form title="Password" desc="*********" />
                             <div className="pt-10">
                                 <SmallButton title="Sign In" />
-                            </div>
-                            
+                            </div>  
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     )
