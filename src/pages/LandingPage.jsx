@@ -83,9 +83,9 @@ export default function LandingPage() {
           <div className="font-bold text-4xl">
             Here's our content that you might like
           </div>
-          <FeatureList title="Blogs" />
-          <FeatureList title="Videos" />
-          <FeatureList title="Experts" />
+          <FeatureList title="Blogs" category="blogs"/>
+          <FeatureList title="Videos" category="videos"/>
+          <FeatureList title="Experts" category="experts"/>
         </div>
         <img className="w-96" src={FeatureImg} alt="" />
       </div>
