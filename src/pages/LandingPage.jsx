@@ -55,15 +55,14 @@ export default function LandingPage() {
         </div>
       </div> */}
 
-
       <div className="py-60 flex flex-row justify-between items-center gap-x-12">
         <div className="flex flex-col justify-between items-center mr-8">
           <div className="font-bold text-4xl">
             Here's our content that you might like
           </div>
-          <FeatureList title="Blogs" />
-          <FeatureList title="Videos" />
-          <FeatureList title="Experts" />
+          <FeatureList title="Blogs" category="blogs"/>
+          <FeatureList title="Videos" category="videos"/>
+          <FeatureList title="Experts" category="experts"/>
         </div>
 
         <img className="w-96" src={FeatureImg} alt="" />
