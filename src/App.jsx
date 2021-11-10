@@ -1,5 +1,6 @@
 import React from "react";
 import Article from "./pages/Article";
+import Blog from "./pages/Blog";
 import LandingPage from "./pages/LandingPage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -10,7 +11,8 @@ function App() {
       {/* <LandingPage /> */}
       {/* <Article /> */}
       {/* <Login /> */}
-      <Register />
+      {/* <Register /> */}
+      <Blog />
     </>
   );
 }

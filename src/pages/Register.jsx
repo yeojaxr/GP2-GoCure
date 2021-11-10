@@ -2,6 +2,7 @@ import React from 'react'
 import Form from '../components/Form'
 import SmallButton from '../components/SmallButton'
 import LoginImg from '../images/register.svg'
+import LogoImg from '../images/logo.svg'
 
 const Register = () => {
     return (
@@ -11,6 +12,9 @@ const Register = () => {
                     <div className="grid grid-cols-2">
                         <img className="py-40 pl-16 pr-8" src={LoginImg} alt="" />
                         <div className="pt-16 pl-8 pr-16">
+                            <div className="flex justify-center pb-6">
+                                <img className="flex h-10" src={LogoImg} alt="" />
+                            </div>
                             <Form title="Name" desc="John Doe" />
                             <Form title="Email" desc="johndoe@mail.com" />
                             <Form title="Password" desc="*********" />
