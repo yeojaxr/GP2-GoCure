@@ -13,6 +13,13 @@ import Expert from "./pages/Expert";
 function App() {
   return (
     <>
+      {/* <LandingPage /> */}
+      {/* <Article /> */}
+      {/* <Login /> */}
+      {/* <Register /> */}
+      {/* <Blog /> */}
+      {/* <Expert /> */}
+
       <main>
         <Routes>
           <Route path="/" element={<LandingPage />}/>
@@ -26,6 +33,7 @@ function App() {
           <Route path="/register" element={<Register />}/>
         </Routes>
       </main>
+
     </>
   );
 }

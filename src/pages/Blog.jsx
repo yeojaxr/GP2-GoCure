@@ -13,7 +13,13 @@ const Blog = () => {
                 <div className="">
                     <Header name="Blogs" pic="blog-header.svg" />
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-4">
-                        {article && article.map(art => <Card key={art.Id} title={art.Title} image={art.ImageUrl} id={art.Id}/>)}
+                        {article && article.map(art => 
+                        <Card 
+                            key={art.Id} 
+                            title={art.Title} 
+                            image={art.ImageUrl} 
+                            id={art.Id}
+                        />)}
                     </div>
                 </div>
                 <div className="flex items-center sticky top-0 h-screen">
