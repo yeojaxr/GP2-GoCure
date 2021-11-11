@@ -9,7 +9,7 @@ const Blog = () => {
 
     return (
         <div>
-            <div className="flex justify-center gap-x-4 lg:px-40 xl:px-60 2xl:px-96"> 
+            <div className="flex justify-center gap-x-4 md:gap-x-8 lg:px-40 xl:px-60 2xl:px-96"> 
                 <div className="pl-4 md:pl-0">
                     <Header name="Blogs" pic="blog-header.svg" />
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-x-2 gap-y-2 md:gap-y-4">
