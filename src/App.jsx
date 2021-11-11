@@ -9,16 +9,15 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Videos from "./pages/Video"
 import Videoplay from "./pages/Videoplay"
-import Expert from "./pages/Expert";
 
 function App() {
   return (
     <>
-      <LandingPage />
+      {/* <LandingPage /> */}
       {/* <Article /> */}
       {/* <Login /> */}
       {/* <Register /> */}
-      {/* <Blog /> */}
+      <Blog />
       {/* <Expert /> */}
     </>
   );
