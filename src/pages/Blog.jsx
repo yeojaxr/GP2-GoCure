@@ -10,9 +10,9 @@ const Blog = () => {
     return (
         <div>
             <div className="flex justify-center gap-x-4 lg:px-40 xl:px-60 2xl:px-96"> 
-                <div className="">
+                <div className="pl-4 md:pl-0">
                     <Header name="Blogs" pic="blog-header.svg" />
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-x-2 gap-y-2 md:gap-y-4">
                         {article && article.map(art => 
                         <Card 
                             key={art.Id} 
@@ -22,7 +22,7 @@ const Blog = () => {
                         />)}
                     </div>
                 </div>
-                <div className="flex items-center sticky top-0 h-screen">
+                <div className="pr-4 md:pr-0 flex items-center sticky top-0 h-screen">
                     <Navbar />
                 </div>
             </div>
