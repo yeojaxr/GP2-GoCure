@@ -35,3 +35,8 @@ body::-webkit-scrollbar-thumb {
 .avatar-bg {
     background-image: url('../images/tojj.jpg');
 }
+
+b {
+    font-weight: 800;
+    color: #941BBE;
+}

@@ -61,7 +61,7 @@ export default function LandingPage() {
             Who we are?
           </p>
           <p className="pt-6 text-lg mr-8">
-            GoCure is a platform for helping our user to keep their
+            <b>GoCure</b> is a platform for helping our user to keep their
             mental health keep healthy and safe through our content
           </p>
         </div>
@@ -97,7 +97,7 @@ export default function LandingPage() {
         </div>
       </div>
       
-      <div className="bg-extra-end px-48 pt-24 pb-60 grid grid-cols-2 gap-x-12">
+      <div className="bg-extra-end px-48 pt-24 pb-60 grid grid-cols-2 gap-x-20">
         <div className="avatar-bg bg-cover bg-center pt-72 shadow-md">
           <Testimonial             
             name="Toji Fushiguro" 
@@ -106,7 +106,7 @@ export default function LandingPage() {
         </div>
         <div className="flex flex-col mr-8">
           <div className="font-bold text-4xl pb-2">
-            Our user stories
+            What our user think about GoCure
           </div>
           <TestiList 
             img="avatar-gojo.png" 
