@@ -9,17 +9,11 @@ import Register from "./pages/Register";
 import Videos from "./pages/Video"
 import Videoplay from "./pages/Videoplay"
 import Expert from "./pages/Expert";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
     <>
-      {/* <LandingPage /> */}
-      {/* <Article /> */}
-      {/* <Login /> */}
-      {/* <Register /> */}
-      {/* <Blog /> */}
-      {/* <Expert /> */}
-
       <main>
         <Routes>
           <Route path="/" element={<LandingPage />}/>
@@ -31,6 +25,7 @@ function App() {
           <Route path="/experts/:id" element={<Expert />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/register" element={<Register />}/>
+          <Route path="/profile" element={<Profile />}/>
         </Routes>
       </main>
 
