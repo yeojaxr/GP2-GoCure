@@ -8,20 +8,30 @@
     background-color: #f0f5ff;
 }
 
+.bg-extra-end {
+    background-image: url("../images/bg-wave-2.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 body::-webkit-scrollbar {
     width: 0.5rem;
 }
 
 body::-webkit-scrollbar-track {
-    background: #ffffff;
+    background-color: transparent;
 }
 
 body::-webkit-scrollbar-thumb {
-    background: #4e4e4e;
+    background-color: #4e4e4e;
     border-radius: 8px;
 }
 
 .bg-screen-blob {
     background-image: url('../images/bg-screen.svg');
     background-size: cover;
+}
+
+.avatar-bg {
+    background-image: url('../images/tojj.jpg');
 }

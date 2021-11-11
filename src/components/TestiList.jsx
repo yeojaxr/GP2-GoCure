@@ -1,19 +1,18 @@
 import React from 'react'
 
-
-const Testimonial = (props) => {
+const TestiList = (props) => {
     return (
         <div>
             <a href={props.url}>
-                <div className="flex">
-                    <div className="cursor-pointer bg-purple-100 shadow-sm">
-                        <div className="flex items-center py-5 px-8">
+                <div className="pt-8">
+                    <div className="cursor-pointer bg-purple-100 shadow-md hover:bg-pink-600 text-gray-900 hover:text-white">
+                        <div className="flex items-center py-4 px-8">
                             <img className="h-12" src={props.img} alt="" />
-                            <div className=""> 
-                                <div className="text-lg font-bold text-gray-900">
+                            <div className="pl-8"> 
+                                <div className="text-lg font-bold">
                                     {props.name}
                                 </div>
-                                <p className="py-1 text-gray-900 text-sm">
+                                <p className="py-1 text-sm">
                                     {props.roles}
                                 </p>
                             </div>
@@ -25,4 +24,4 @@ const Testimonial = (props) => {
     )
 }
 
-export default Testimonial
+export default TestiList
