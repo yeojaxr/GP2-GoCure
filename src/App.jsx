@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
 import Article from "./pages/Article";
 import Blog from "./pages/Blog";
 import LandingPage from "./pages/LandingPage";
@@ -12,6 +11,7 @@ import Expert from "./pages/Expert";
 import Profile from "./pages/Profile";
 import { LoadingPage } from "./pages/LoadingPage";
 import PageNotFound from "./pages/PageNotFound";
+
 
 function App() {
   return (
@@ -25,14 +25,13 @@ function App() {
           <Route path="/videos/x" element={<Videoplay />}/>
           <Route path="/experts" element={<Expert />}/>
           <Route path="/experts/:id" element={<Expert />}/>
-          <Route path="/login" element={<Login />}/>
           <Route path="/register" element={<Register />}/>
+          <Route path="/login" element={<Login />}/>
           <Route path="/profile" element={<Profile />}/>
           <Route path="/load" element={<LoadingPage />}/>
           <Route path="*" element={<PageNotFound />}/>
         </Routes>
       </main>
-
     </>
   );
 }

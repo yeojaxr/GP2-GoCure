@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import axios from "axios";
 
 export default function useFetchArticle() {
   const isMounted = useRef(false);
@@ -27,4 +28,25 @@ export default function useFetchArticle() {
   }, []);
 
   return { article, error };
+}
+
+// Error Cannot Fetch Data
+export function useFetchVideo() {
+  const [video, setVideo] = useState(null);
+  const [error, setError] = useState(null);
+
+  async function fetchData() {
+    let response = await axios
+      .get(
+        `https://618bd026ded7fb0017bb9232.mockapi.io/youtube`
+      );
+    let data = await response.data
+      setVideo(data);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return { video }
 }
