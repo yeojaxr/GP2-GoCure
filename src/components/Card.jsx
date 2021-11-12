@@ -4,9 +4,9 @@ import {Link} from "react-router-dom"
 
 const Card = (props) => {
     return (
-        <Link to={`/blogs/${props.id}`}>
+        <Link to={`/${props.category}/${props.id}`}>
             <div className="">
-                <img src={props.image} alt="egg" className="object-cover h-44 w-full rounded" />
+                <img src={props.image} alt="egg" className="object-cover object-right h-44 w-full rounded" />
             </div>
             <div className="py-4">
                 <div className="font-bold text-gray-900 text-sm mb-2">

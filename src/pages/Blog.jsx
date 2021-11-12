@@ -26,6 +26,7 @@ const Blog = () => {
                   title={art.Title}
                   image={art.ImageUrl}
                   id={art.Id}
+                  category="blogs"
                 />
               ))}
           </div>
