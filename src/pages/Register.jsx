@@ -8,8 +8,8 @@ const Register = () => {
     return (
         <div>
             <div className="bg-screen-blob h-full">
-                <div className="px-64 py-12 flex items-center">
-                    <div className="rounded-2xl bg-white h-full flex items-center">
+                <div className="px-64">
+                    <div className="rounded-2xl bg-white h-full">
                         <div className="grid grid-cols-2">
                             <img className="py-40 pl-16 pr-8" src={LoginImg} alt="" />
                             <div className="pt-16 pl-8 pr-16">
