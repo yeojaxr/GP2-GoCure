@@ -10,6 +10,7 @@ import Videos from "./pages/Video"
 import Videoplay from "./pages/Videoplay"
 import Expert from "./pages/Expert";
 import Profile from "./pages/Profile";
+import { LoadingPage } from "./pages/LoadingPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/login" element={<Login />}/>
           <Route path="/register" element={<Register />}/>
           <Route path="/profile" element={<Profile />}/>
+          <Route path="/load" element={<LoadingPage />}/>
         </Routes>
       </main>
 
