@@ -5,7 +5,7 @@ const TestiList = (props) => {
         <div>
             <a href={props.url}>
                 <div className="pt-8">
-                    <div className="cursor-pointer bg-purple-100 shadow-md hover:bg-pink-600 text-gray-900 hover:text-white">
+                    <div className="cursor-pointer bg-purple-100 shadow-md hover:bg-pink-600 text-gray-900 hover:text-white border border-gray-200">
                         <div className="flex items-center py-4 px-8">
                             <img className="h-12" src={props.img} alt="" />
                             <div className="pl-8"> 

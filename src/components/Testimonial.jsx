@@ -5,8 +5,8 @@ const Testimonial = (props) => {
     return (
         <div>
             <a href={props.url}>
-                <div className="flex">
-                    <div className="cursor-pointer bg-purple-100 shadow-sm">
+                <div className="avatar-bg bg-cover bg-center pt-72 shadow-md border border-gray-300">
+                    <div className="cursor-pointer bg-purple-100">
                         <div className="flex items-center py-5 px-8">
                             <img className="h-12" src={props.img} alt="" />
                             <div className=""> 

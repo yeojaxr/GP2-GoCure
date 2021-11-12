@@ -19,7 +19,7 @@ export default function LandingPage() {
 
   return (
     <div>
-      <nav className="bg-white py-1 fixxed px-48 shadow-sm">
+      <nav className="bg-white py-1 fixxed px-8 md:px-48 shadow-sm">
         <div class="relative flex items-center justify-between h-16">
 
             {/* LOGO */}
@@ -36,14 +36,14 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      <div className="px-48 pt-40 flex flex-row justify-between items-center gap-x-12">
+      <div className="px-8 md:px-48 pt-40 flex flex-col md:flex-row justify-between items-center gap-x-12">
         <div className="flex flex-col">
           <p className="text-3xl font-bold">
             The right care at
             <br />
             the right time.
           </p>
-          <p className="pt-6 text-lg mr-8">
+          <p className="pt-6 text-lg mr-0 md:mr-8">
             Our platform empowers peoples with
             clinically-backed digital tools for proactively
             improving mental wellbeing.
@@ -52,28 +52,32 @@ export default function LandingPage() {
             <SmallButton title="Register Now" />
           </div>
         </div>
-        <img className="w-96" src={HeadImg} alt="" />
+        <img className="md:pt-0 pt-20 w-72 md:w-96" src={HeadImg} alt="" />
       </div>
       
-      <div className="px-48 pt-72 pb-8 flex flex-row justify-between items-center gap-x-12">
+      <div className="px-8 md:px-48 pt-72 pb-8 flex flex-col md:flex-row justify-between items-center gap-x-12">
+        <img className="md:hidden block pb-12 w-72 md:w-96" src={ProfileImg} alt="" />
         <div className="flex flex-col">
           <p className="text-3xl font-bold">
             Who we are?
           </p>
-          <p className="pt-6 text-lg mr-8">
+          <p className="pt-6 text-lg mr-0 md:mr-8">
             <b>GoCure</b> is a platform for helping our user to keep their
             mental health keep healthy and safe through our content
           </p>
         </div>
-        <img className="w-96" src={ProfileImg} alt="" />
+        <img className="hidden md:block pt-0 w-72 md:w-96" src={ProfileImg} alt="" />
       </div>
 
       <img src={BgImg} className="w-full" alt=""/>
 
-      <div className="bg-extra-content px-48 pb-60 flex flex-row justify-between items-center gap-x-20">
-        <img className="w-96" src={image} alt="" />
-        <div className="flex flex-col mr-8">
-          <div className="font-bold text-3xl">
+      <div className="bg-extra-content px-8 md:px-48 pb-60 flex flex-col md:flex-row justify-between items-center gap-x-20">
+        <div className="pt-20 md:hidden block font-bold text-3xl">
+            Here's our content that you might like
+        </div>
+        <img className="md:pt-0 pt-12 w-72 md:w-96" src={image} alt="" />
+        <div className="flex flex-col">
+          <div className="hidden md:block font-bold text-3xl">
             Here's our content that you might like
           </div>
           <div onClick={() => setImage(FeatureBlog)}>
@@ -97,16 +101,17 @@ export default function LandingPage() {
         </div>
       </div>
       
-      <div className="bg-extra-end px-48 pt-24 pb-60 grid grid-cols-2 gap-x-20">
-        <div className="avatar-bg bg-cover bg-center pt-72 shadow-md">
-          <Testimonial             
-            name="Toji Fushiguro" 
-            roles="I am a sorcerer hunter who is still working hard to achieve success and sometime i always said to be a burden on parents. It made me depressed. but at GoCure, I can easily tell about the condition I'm experiencing, as time goes by my depression gone by itself."    
-          />
+      <div className="bg-extra-end px-8 md:px-48 pt-24 pb-60 grid grid-cols-1 md:grid-cols-2 gap-x-20">
+        <div className="pt-20 pb-10 md:hidden block font-bold text-3xl">
+          What our user think about <b>GoCure</b>
         </div>
-        <div className="flex flex-col mr-8">
-          <div className="font-bold text-4xl pb-2">
-            What our user think about GoCure
+        <Testimonial             
+          name="Toji Fushiguro" 
+          roles="I am a sorcerer hunter who is still working hard to achieve success and sometime i always said to be a burden on parents. It made me depressed. but at GoCure, I can easily tell about the condition I'm experiencing, as time goes by my depression gone by itself."    
+        />
+        <div className="flex flex-col">
+          <div className="hidden md:block font-bold text-4xl pb-2">
+            What our user think about <b>GoCure</b>
           </div>
           <TestiList 
             img="avatar-gojo.png" 
