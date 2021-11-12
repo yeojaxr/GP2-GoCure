@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react'
-import Form from '../components/Form'
-import SmallButton from '../components/SmallButton'
 import LoginImg from '../images/register.svg'
 import LogoImg from '../images/logo.svg'
-import { useUser } from "../context/context";
+import { useUser } from "../context/user-context";
 import { useNavigate } from "react-router-dom";
 
 const Register = (props) => {
@@ -17,7 +15,14 @@ const Register = (props) => {
     useEffect(() => {
         console.log("userLocal2", user)
         setLogged(true);
-        navigate("/blogs")
+        if(user){
+            if(user.length !== 0){
+                const currentUser = user.find((u) => u.userLogged === true)
+                if(currentUser){
+                    navigate("/blogs")
+                }
+            }
+        }
     }, [user, navigate])
     
     function handleRegister (e) {

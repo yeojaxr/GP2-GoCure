@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import Videos from "./pages/Video"
 import Videoplay from "./pages/Videoplay"
 import Expert from "./pages/Expert";
+import Profile from "./pages/Profile";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/experts/:id" element={<Expert />}/>
           <Route path="/register" element={<Register />}/>
           <Route path="/login" element={<Login />}/>
+          <Route path="/profile" element={<Profile />}/>
         </Routes>
       </main>
     </>

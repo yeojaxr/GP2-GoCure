@@ -1,22 +1,12 @@
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
-import React, {useState, useEffect} from "react";
-import axios, { Axios } from "axios";
+import React, {useState, useEffect, useContext} from "react";
+import { VideosContext } from "../context/video-context";
 
 const Video = () => {
-  const [data, _setData] = useState(null);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    axios
-      .get(
-        `https://618bd026ded7fb0017bb9232.mockapi.io/youtube`
-      )
-      .then((response) => {
-        _setData(response.data);
-      });
-  }, []);
+  const { videos } = useContext(VideosContext);
+  console.log(videos);
 
   return (
     <div>

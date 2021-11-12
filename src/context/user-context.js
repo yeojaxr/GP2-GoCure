@@ -3,7 +3,7 @@ import React, {
   useEffect,
   useContext,
 } from "react";
-import userReducer from "../context/reducer";
+import userReducer from "./user-reducer";
 
 // Initialized Context
 const UserContext = React.createContext(null);

@@ -3,19 +3,22 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import React from "react";
 import useFetchArticle from "../services/articleApi";
-import useFetchFish from "../services/articleApi";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+import { useUser } from "../context/user-context";
 
 const Blog = () => {
   const { article } = useFetchArticle();
-  
+  const {user} = useUser();
+  useEffect(() => {
+    console.log("userLocal2", user)
+  }, [user])
+
   return (
     <div>
-      <div className="flex justify-center gap-x-4 lg:px-40 xl:px-60 2xl:px-96">
-        <div className="">
+      <div className="flex justify-center gap-x-4 md:gap-x-8 lg:px-40 xl:px-60 2xl:px-96">
+        <div className="pl-4 md:pl-0">
           <Header name="Blogs" pic="blog-header.svg" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-x-2 gap-y-2 md:gap-y-4">
             {article &&
               article.map((art) => (
                 <Card
@@ -27,7 +30,7 @@ const Blog = () => {
               ))}
           </div>
         </div>
-        <div className="flex items-center sticky top-0 h-screen">
+        <div className="pr-4 md:pr-0 flex items-center sticky top-0 h-screen">
           <Navbar />
         </div>
       </div>
