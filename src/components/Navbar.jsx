@@ -10,13 +10,13 @@ const Navbar = () => {
         <div className="">
             <div className="flex flex-col items-center">
                 <Link className="pt-12 pb-4" to="/">
-                    <img src={BlogsImg} alt="" />
+                    <img className="h-6" src={BlogsImg} alt="" />
                 </Link>
                 <Link className="py-4" to="/">
-                    <img src={VideosImg} alt="" />
+                    <img className="h-6" src={VideosImg} alt="" />
                 </Link>
                 <Link className="py-4" to="/">
-                    <img src={ExpertsImg} alt="" />
+                    <img className="h-6" src={ExpertsImg} alt="" />
                 </Link>
 
                 <Link className="py-12" to="/">
