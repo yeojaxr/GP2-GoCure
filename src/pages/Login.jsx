@@ -39,8 +39,8 @@ const Login = (props) => {
   return (
     <div>
       <div className="bg-screen-blob h-screen">
-        <div className="px-64 py-16 flex items-center">
-          <div className="rounded-2xl bg-white h-full flex items-center">
+        <div className="px-64">
+          <div className="rounded-2xl bg-white h-full">
             <div className="grid grid-cols-2">
               <img
                 className="py-24 pl-16 pr-8"
