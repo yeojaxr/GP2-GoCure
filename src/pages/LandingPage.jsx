@@ -105,12 +105,10 @@ export default function LandingPage() {
         <div className="pt-20 pb-10 md:hidden block font-bold text-3xl">
           What our user think about <b>GoCure</b>
         </div>
-        <div className="avatar-bg bg-cover bg-center pt-72 shadow-md">
-          <Testimonial             
-            name="Toji Fushiguro" 
-            roles="I am a sorcerer hunter who is still working hard to achieve success and sometime i always said to be a burden on parents. It made me depressed. but at GoCure, I can easily tell about the condition I'm experiencing, as time goes by my depression gone by itself."    
-          />
-        </div>
+        <Testimonial             
+          name="Toji Fushiguro" 
+          roles="I am a sorcerer hunter who is still working hard to achieve success and sometime i always said to be a burden on parents. It made me depressed. but at GoCure, I can easily tell about the condition I'm experiencing, as time goes by my depression gone by itself."    
+        />
         <div className="flex flex-col">
           <div className="hidden md:block font-bold text-4xl pb-2">
             What our user think about <b>GoCure</b>
