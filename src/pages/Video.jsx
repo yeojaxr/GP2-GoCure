@@ -17,7 +17,6 @@ const Video = () => {
       });
   }, []);
 
-  console.log(videos)
   return (
     <div>
       <div className="flex justify-center gap-x-4 lg:px-40 xl:px-60 2xl:px-96">

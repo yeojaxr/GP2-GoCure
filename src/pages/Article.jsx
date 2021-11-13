@@ -9,9 +9,17 @@ const Article = () => {
     const { article } = useFetchArticle();
     const [selectedArticle, setArticle] = useState({});
     const [selectedContent, setContent] = useState({});
+    const [indexSelectedContent, setIndex] = useState(0);
+
+    const [otherArticle1, setOtherArticle1] = useState([]);
+    const [otherArticle2, setOtherArticle2] = useState([]);
+    const [otherArticle3, setOtherArticle3] = useState([]);
 
     useEffect(() => {
         if (article) {
+            // Main article
+            const _indexSelectedContent = article.indexOf(article.find(art => art.Id === id))
+            setIndex(_indexSelectedContent);
             const _selectedArticle = article.filter(art => art.Id === id);
             setArticle(_selectedArticle);
 
@@ -21,7 +29,23 @@ const Article = () => {
         }
     },[article, id]);
 
-    console.log(selectedContent);
+    console.log(article);
+
+    function getRandomWithOneExclusion(lengthOfArray,indexToExclude){
+        let rand = null;  //an integer
+
+        while(rand === null || rand === indexToExclude){
+            rand = Math.round(Math.random() * (lengthOfArray - 1));
+        }      
+        return rand;
+    }
+
+    useEffect(() => {
+        setOtherArticle1(getRandomWithOneExclusion(16, indexSelectedContent))
+        setOtherArticle2(getRandomWithOneExclusion(16, otherArticle1))
+        setOtherArticle3(getRandomWithOneExclusion(16, otherArticle2))
+    },[article, id]);
+
 
     return (
         <div>
@@ -68,13 +92,31 @@ const Article = () => {
                         </div>
                         <div className="pt-3">
                             <div className="pt-3">
-                                <Card />
+                                {selectedContent.length === undefined ? <div>Loading</div> : <Card
+                                    key={article[otherArticle1].Id}
+                                    title={article[otherArticle1].Title}
+                                    image={article[otherArticle1].ImageUrl}
+                                    id={article[otherArticle1].Id}
+                                    category="blogs"
+                                />}
                             </div>
                             <div className="pt-3">
-                                <Card />
+                                {selectedContent.length === undefined ? <div>Loading</div> : <Card
+                                    key={article[otherArticle2].Id}
+                                    title={article[otherArticle2].Title}
+                                    image={article[otherArticle2].ImageUrl}
+                                    id={article[otherArticle2].Id}
+                                    category="blogs"
+                                />}
                             </div>
                             <div className="pt-3">
-                                <Card />
+                                {selectedContent.length === undefined ? <div>Loading</div> : <Card
+                                    key={article[otherArticle3].Id}
+                                    title={article[otherArticle3].Title}
+                                    image={article[otherArticle3].ImageUrl}
+                                    id={article[otherArticle3].Id}
+                                    category="blogs"
+                                />}
                             </div>
                         </div>
                     </div>

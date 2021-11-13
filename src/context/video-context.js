@@ -17,13 +17,6 @@ export const VideosContext = createContext(defaultValue);
 
 export function VideosProvider({ children }) {
   const [videos, setVideos] = useState([]);
-  //   useEffect(() => {
-  //     const url = "https://618bd026ded7fb0017bb9232.mockapi.io/youtube";
-  //     fetch(url)
-  //       .then((response) => response.json())
-  //       .then((responseVideos) => responseVideos.map(createNewVideo))
-  //       .then(setVideos);
-  //   }, []); // componentDidMount
 
   useEffect(() => {
     axios
@@ -39,7 +32,7 @@ export function VideosProvider({ children }) {
     videos: videos,
   };
 
-  console.log("VideoContext", contextValue);
+  // console.log("VideoContext", contextValue);
 
   return (
     <VideosContext.Provider value={contextValue}>
