@@ -8,10 +8,6 @@ import { useUser } from "../context/user-context";
 
 const Blog = () => {
   const { article } = useFetchArticle();
-  const {user} = useUser();
-  useEffect(() => {
-    console.log("userLocal2", user)
-  }, [user])
 
   return (
     <div>
