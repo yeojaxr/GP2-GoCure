@@ -14,7 +14,7 @@ const Blog = () => {
       <div className="flex justify-center gap-x-4 md:gap-x-8 px-4 sm:px-4 lg:px-40 xl:px-60 2xl:px-96">
         <div className="pr-10 md:pr-16 lg:pr-0">
           <Header name="Blogs" pic="blog-header.svg" />
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-x-2 gap-y-2 md:gap-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-x-3 gap-y-2 md:gap-y-4">
             {article &&
               article.map((art) => (
                 <Card
