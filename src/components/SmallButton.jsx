@@ -18,7 +18,7 @@ const SmallButton = (props) => {
 
     return (
         <div className="py-2.5">
-            <Link to={{pathname: props.url}} onClick={() => handleClick()} className="py-2.5 px-5 bg-purple-600 hover:bg-pink-600 rounded-md text-white text-sm font-bold">
+            <Link to={{pathname: props.url}} onClick={() => handleClick()} className="py-2.5 px-5 bg-purple-600 hover:bg-pink-600 rounded-md text-white text-xs md:text-sm font-semibold md:font-bold">
                 {props.title}
             </Link>
         </div>

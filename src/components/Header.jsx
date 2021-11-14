@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = (props) => {
     return (
-        <div className="pt-8 pb-6 md:pb-8">
+        <div className="pt-4 pb-4 md:pb-8">
             <a href={props.url}>
                 <div className="bg-purple-700 rounded-md py-3 md:py-0">
                     <div className="h-full flex flex-wrap items-end content-end justify-between">

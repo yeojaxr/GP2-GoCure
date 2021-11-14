@@ -8,11 +8,11 @@ const Card = (props) => {
             <div className="">
                 <img src={props.image} alt="egg" className="object-cover object-right h-44 w-full rounded" />
             </div>
-            <div className="py-4">
+            <div className="py-3 md:py-4">
                 <div className="font-bold text-gray-900 text-sm mb-2">
                     {props.title}
                 </div>
-                <p className="pb-2 text-gray-900 text-sm">
+                <p className="pb-1 md:pb-2 text-gray-900 text-sm">
                     {props.description}
                 </p>
                 <div className="flex">
