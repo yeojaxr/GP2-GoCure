@@ -102,7 +102,8 @@ const Login = (props) => {
                           </Link>
                         </p>
                         </>
-                      : ""}
+                      : ""
+                      }
                     <button
                       onClick={handleLogin}
                       className={"py-2.5 px-5 bg-purple-600 hover:bg-pink-600 rounded-md text-white text-sm font-bold"}

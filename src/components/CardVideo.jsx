@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import Heart from '../images/heart.svg'
 import HeartFill from '../images/heart-fill.svg'
 import {Link} from "react-router-dom"
-import { useBlog } from "../context/blog-context";
+import { useVideo } from "../context/video-context";
 
-const Card = (props) => {
-    const {likesBlog, dispatch} = useBlog();
+const CardVideo = (props) => {
+    const {likesVideo, dispatch} = useVideo();
     let updateLike = false
     
     const [like, setLike] = useState(false)
@@ -18,10 +18,11 @@ const Card = (props) => {
     const [_category, setCategory] = useState("")
     const [_title, setTitle] = useState("")
 
-    const isExist = likesBlog.filter(item => item.userLikes.id === `${_id}`);
+    const isExist = likesVideo.filter(item => item.userLikes.id === `${_id}`);
     // if(isExist.length === 1){
     //     const setToggle = ;
     // }
+    console.log("likesVideo", likesVideo)
     
     useEffect(() => {
         let likes = {
@@ -39,7 +40,7 @@ const Card = (props) => {
     useEffect(()=>{
         if(userLikes){
             console.log("like array", userLikes);
-            dispatch({type: "ADD-BLOG", userLikes})
+            dispatch({type: "ADD-VIDEO", userLikes})
         } 
     },[dispatch, userLikes])
     
@@ -53,7 +54,7 @@ const Card = (props) => {
 
     function handleClick() {
         setLike(!like);
-        dispatch({type: "UPDATE-BLOG", _id, _updateLike, _image, _category, _title})
+        dispatch({type: "UPDATE-VIDEO", _id, _updateLike, _image, _category, _title})
         updateLike = !updateLike
         console.log("like clicked ", updateLike);
     }
@@ -88,4 +89,4 @@ const Card = (props) => {
     )
 }
 
-export default Card
+export default CardVideo

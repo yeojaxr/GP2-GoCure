@@ -79,12 +79,7 @@ const Register = (props) => {
                                             </div>
                                         </div>
                                     </div>
-                                    {/* <Form title="Name" desc="John Doe" />
-                                    <Form title="Email" desc="johndoe@mail.com" />
-                                    <Form title="Password" desc="*********" />
-                                    <Form title="Confirm Password" desc="*********" /> */}
                                     <div className="pt-10">
-                                        {/* <SmallButton title="Register" /> */}
                                         <button onClick={handleRegister} className="py-2.5 px-5 bg-purple-600 hover:bg-pink-600 rounded-md text-white text-sm font-bold">
                                             Register
                                         </button>
@@ -93,7 +88,6 @@ const Register = (props) => {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
