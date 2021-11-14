@@ -1,7 +1,11 @@
+import Slider from "react-slick"
+import Carousel from "../carousel"
+
 function MainPage() {
     return (
         <div>
-            Main Page
+            <h1>hello</h1>
+            <Carousel />
         </div>
     )
 }
