@@ -11,6 +11,7 @@ import Expert from "./pages/Expert";
 import Profile from "./pages/Profile";
 import { LoadingPage } from "./pages/LoadingPage";
 import PageNotFound from "./pages/PageNotFound";
+import ForbiddenPage from "./pages/ForbiddenPage";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/profile" element={<Profile />}/>
           <Route path="/load" element={<LoadingPage />}/>
           <Route path="*" element={<PageNotFound />}/>
+          <Route path="/403" element={<ForbiddenPage />}/>
         </Routes>
       </main>
     </>
