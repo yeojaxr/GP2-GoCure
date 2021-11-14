@@ -10,16 +10,16 @@ const Navbar = () => {
     return (
         <div>
             <div className="flex flex-col items-center">
-                <Link className="pt-12 pb-3" to="/">
+                <Link className="pt-12 pb-3" to="/profile">
                     <img className="w-6 md:w-7 xl:w-8" src={HomeImg} />
                 </Link>
-                <Link className="py-3" to="/">
+                <Link className="py-3" to="/blogs">
                     <img className="w-6 md:w-7 xl:w-8" src={BlogsImg} />
                 </Link>
-                <Link className="py-3" to="/">
+                <Link className="py-3" to="/videos">
                     <img className="w-6 md:w-7 xl:w-8" src={VideosImg} />
                 </Link>
-                <Link className="py-3" to="/">
+                <Link className="py-3" to="/experts">
                     <img className="w-6 md:w-7 xl:w-8" src={ExpertsImg} />
                 </Link>
 

@@ -10,16 +10,16 @@ const NavbarRow = () => {
     return (
         <div>
             <div className="flex items-center py-3">
-                <Link className="pl-6 pr-2" to="/">
+                <Link className="pl-6 pr-2" to="/profile">
                     <img className="w-6 md:w-7 xl:w-8" src={HomeImg} />
                 </Link>
-                <Link className="px-2" to="/">
+                <Link className="px-2" to="/blogs">
                     <img className="w-6 md:w-7 xl:w-8" src={BlogsImg} />
                 </Link>
-                <Link className="px-2" to="/">
+                <Link className="px-2" to="/videos">
                     <img className="w-6 md:w-7 xl:w-8" src={VideosImg} />
                 </Link>
-                <Link className="px-2" to="/">
+                <Link className="px-2" to="/experts">
                     <img className="w-6 md:w-7 xl:w-8" src={ExpertsImg} />
                 </Link>
 

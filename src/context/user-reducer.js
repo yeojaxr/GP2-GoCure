@@ -1,4 +1,3 @@
-import { Navigate } from "react-router-dom";
 export default function userReducer(user, action){
 
     switch (action.type) {
@@ -41,6 +40,22 @@ export default function userReducer(user, action){
             return user.map((u) =>
                 u.userLogged === true ? { ...u, userLogged: false } : u
             );
+        }
+        
+        case "LIKE-BLOG":{
+            const{ userBlogLikes, countClick } = action;
+
+            if (countClick > 0){
+                console.log("Hellow its > 0")
+                return user.map((u) =>
+                    u.userLogged === true ? { ...u, userBlogLikes: [userBlogLikes] } : u
+                ); 
+            } else{
+                console.log("Hellow its else")
+                return user.map((u) =>
+                    u.userLogged === true ? { ...u, userBlogLikes: [userBlogLikes] } : u
+                ); 
+            }
         }
 
         default:

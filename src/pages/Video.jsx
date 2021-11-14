@@ -1,8 +1,7 @@
-import Card from "../components/Card";
+import CardVideo from "../components/CardVideo";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import React, {useState, useEffect, useContext} from "react";
-import { VideosContext } from "../context/video-context";
 import axios from "axios";
 
 const Video = () => {
@@ -24,7 +23,7 @@ const Video = () => {
           <Header name="Videos" pic="video-header.svg" />
           <div className="grid grid-cols-1 md:grid-cols-4 gap-x-4 gap-y-4">
             {videos && videos.map((vid) => (
-              <Card
+              <CardVideo
                 key={vid.id}
                 title={vid.title}
                 image={vid.imageLink}
