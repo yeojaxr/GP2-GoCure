@@ -4,7 +4,7 @@ const Content = (props) => {
   return (
     <>
       <article>
-        <h1 className="text-xl md:text-3xl font-bold mb-5">
+        <h1 className="text-xl lg:text-2xl font-bold mb-5">
           {props.subtitle}
         </h1>
         <p className="mb-12 para-1">

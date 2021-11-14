@@ -2,6 +2,7 @@ import Card from "../components/Card";
 import React, {useEffect, useState} from 'react'
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import NavbarRow from "../components/NavbarRow";
 
 const Videoplay = () => {
     const { id } = useParams();
@@ -47,44 +48,40 @@ const Videoplay = () => {
     
     return (
         <div>
+            {/* PLACE VIDEO HERE */}
+            <div className="px-5 md:px-12 lg:px-28 flex justify-center mt-10">
+                <iframe 
+                    className="w-full h-64 md:h-96" 
+                    title="myFrame" 
+                    src={selectedVideo && selectedVideo.youtubeLink}>
+                </iframe>
+            </div>
+
             {/* ADJUST WIDTH */}
-            <div className="px-10 md:px-28 xl:px-30 2xl:px-60">
-                {/* PLACE VIDEO HERE */}
-                <div className="mt-10">
-                    <iframe width="850" height="400" title="myFrame"
-                        src={selectedVideo && selectedVideo.youtubeLink}>
-                    </iframe>
-                </div>
-
-                {/* HEAD */}
-                <div className="pt-16 font-bold text-3xl">
-                    {selectedVideo && selectedVideo.title}
-                </div>
-
-                {/* CONTENT */}
+            <div className="px-5 md:px-12 lg:px-28 xl:px-30 2xl:px-60">
                 <div className="py-10 grid grid-cols-1 md:grid-cols-3 gap-x-6">
 
-                    <div className="md:hidden block pb-12">
-                        <p className="text-md font-bold">Salman Setiawan</p>
-                        <p className="text-sm pt-2">Kamis, 24 Oktober 2021</p>
-                    </div>
-
-                    {/* ARTICLE */}
+                    {/* CONTENT */}
                     <div className="col-span-2 text-sm md:text-md leading-relaxed text-justify">
-                        {selectedVideo && selectedVideo.description}
+                        <div className="pb-2 font-bold text-2xl">
+                            {selectedVideo && selectedVideo.title}
+                        </div>
+                        <div className="pt-2 pb-6 block">
+                            <p className="text-sm font-bold">Salman Setiawan</p>
+                            <p className="text-xs pt-2">Kamis, 24 Oktober 2021</p>
+                        </div>
+                        <div className="border-t-2 pt-6">
+                            {selectedVideo && selectedVideo.description}
+                        </div>
                     </div>
                     
                     {/* OTHER ARTICLE */}
-                    <div className="px-0 md:px-10 text-md leading-relaxed text-justify">
-                        <div className="hidden md:block">
-                            <p className="text-md font-bold">Salman Setiawan</p>
-                            <p className="text-sm pt-2">Kamis, 24 Oktober 2021</p>
-                        </div>
-                        <div className="pt-2 md:pt-10 font-bold">
-                            Other Article
+                    <div className="pl-0 lg:pl-10 pt-10 md:pt-0 text-md">
+                        <div className="font-bold">
+                            Other Videos
                         </div>
                         <div className="pt-3">
-                            <div className="pt-3">
+                            <div className="pt-2 md:pt-3">
                                 {videos.length === 0 ? <div>Loading</div> : <Card
                                     key={videos[otherVideo1].id}
                                     title={videos[otherVideo1].title}
@@ -93,7 +90,7 @@ const Videoplay = () => {
                                     category="videos"
                                 />}
                             </div>
-                            <div className="pt-3">
+                            <div className="pt-2 md:pt-3">
                                 {videos.length === 0 ? "" : <Card
                                     key={videos[otherVideo2].id}
                                     title={videos[otherVideo2].title}
@@ -102,7 +99,7 @@ const Videoplay = () => {
                                     category="videos"
                                 />}
                             </div>
-                            <div className="pt-3">
+                            <div className="pt-2 md:pt-3">
                                 {videos.length === 0 ? "" : <Card
                                     key={videos[otherVideo3].id}
                                     title={videos[otherVideo3].title}
@@ -114,6 +111,12 @@ const Videoplay = () => {
                         </div>
                     </div>
 
+                </div>
+            </div>
+            <div className="botbar flex w-full justify-center pb-5">
+                <div className="bg-white px-2.5 md:px-3 lg:px-4 rounded-full border border-gray-700">
+
+                    <NavbarRow />
                 </div>
             </div>
         </div>

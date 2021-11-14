@@ -33,11 +33,11 @@ export default function LandingPage() {
 
             {/* LOGO */}
             <div className="flex items-center">
-              <img className="h-9" src={LogoImg} alt="Workflow" />
+              <img className="h-7 md:h-9" src={LogoImg} alt="Workflow" />
             </div>
 
             {/* MENU */}
-            <div className="flex items-center justify-end space-x-4">
+            <div className="flex items-center justify-end gap-x-2 md:gap-x-4">
               {
                 (currUser) ? <SmallButton title="Logout"/> : 
                 (<>
@@ -49,21 +49,22 @@ export default function LandingPage() {
             
         </div>
       </nav>
+      
       <div className="flex items-center justify-center">
         <section>
           <div className="px-8 md:px-48 pt-40 flex flex-col md:flex-row justify-between items-center gap-x-12">
             <div className="flex flex-col">
-              <p className="text-3xl font-bold">
+              <p className="text-xl md:text-3xl font-bold">
                 The right care at
                 <br />
                 the right time.
               </p>
-              <p className="pt-6 text-lg mr-0 md:mr-8">
+              <p className="pt-4 md:pt-6 text-sm md:text-lg mr-12 md:mr-8">
                 Our platform empowers peoples with
                 clinically-backed digital tools for proactively
                 improving mental wellbeing.
               </p>
-              <div className="pt-16 flex flex-row gap-x-8">
+              <div className="pt-9 md:pt-16 flex flex-row gap-x-8">
                 <SmallButton title="Register Now" url="/register"/>
               </div>
             </div>
@@ -73,10 +74,10 @@ export default function LandingPage() {
           <div className="px-8 md:px-48 pt-72 pb-8 flex flex-col md:flex-row justify-between items-center gap-x-12">
             <img className="md:hidden block pb-12 w-72 md:w-96" src={ProfileImg} alt="" />
             <div className="flex flex-col">
-              <p className="text-3xl font-bold">
+              <p className="text-xl md:text-3xl font-bold">
                 Who we are?
               </p>
-              <p className="pt-6 text-lg mr-0 md:mr-8">
+              <p className="pt-4 md:pt-6 text-sm md:text-lg mr-12 md:mr-8">
                 <b>GoCure</b> is a platform for helping our user to keep their
                 mental health keep healthy and safe through our content
               </p>
@@ -86,38 +87,38 @@ export default function LandingPage() {
 
           <img src={BgImg} className="w-full" alt=""/>
 
-          <div className="bg-extra-content px-8 md:px-48 pb-60 flex flex-col md:flex-row justify-between items-center gap-x-20">
-            <div className="pt-20 md:hidden block font-bold text-3xl">
+          <div className="bg-extra-content px-8 md:px-48 pb-24 md:pb-60 flex flex-col md:flex-row justify-between items-center gap-x-20">
+            <div className="pt-20 md:hidden block font-bold text-xl md:text-3xl">
                 Here's our content that you might like
             </div>
-            <img className="md:pt-0 pt-12 w-72 md:w-96" src={image} alt="" />
+            <img className="md:pt-0 pt-10 w-56 md:w-96" src={image} alt="" />
             <div className="flex flex-col">
-              <div className="hidden md:block font-bold text-3xl">
+              <div className="hidden md:block font-bold text-xl md:text-3xl">
                 Here's our content that you might like
               </div>
               <div onClick={() => setImage(FeatureBlog)}>
                 <FeatureList 
                   title="Blogs" 
-                  desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum felis a neque pulvinar luctus."
+                  desc="A mental health's article that you can read, in order to increase your knowledge about mental health."
                 />
               </div>
               <div onClick={() => setImage(FeatureVideo)}>
                 <FeatureList 
                   title="Videos"
-                  desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum felis a neque pulvinar luctus."
+                  desc="There are videos of mental health on a different topic by an expert that you can watch and replay many times."
                 />
               </div>
               <div onClick={() => setImage(FeatureExpert)}>
                 <FeatureList 
                   title="Experts"
-                  desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum felis a neque pulvinar luctus."
+                  desc="Get closer to our experts and make the best meeting for your consultation in order to make your mental health even better."
                 />
               </div>
             </div>
           </div>
           
           <div className="bg-extra-end px-8 md:px-48 pt-24 pb-60 grid grid-cols-1 md:grid-cols-2 gap-x-20">
-            <div className="pt-20 pb-10 md:hidden block font-bold text-3xl">
+            <div className="pb-6 md:hidden block font-bold text-xl md:text-3xl">
               What our user think about <b>GoCure</b>
             </div>
             <Testimonial             

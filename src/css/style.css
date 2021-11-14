@@ -40,3 +40,14 @@ b {
     font-weight: 800;
     color: #941BBE;
 }
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.botbar {
+    position: fixed;
+    bottom: 0;
+}
