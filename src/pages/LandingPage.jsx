@@ -99,19 +99,19 @@ export default function LandingPage() {
               <div onClick={() => setImage(FeatureBlog)}>
                 <FeatureList 
                   title="Blogs" 
-                  desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum felis a neque pulvinar luctus."
+                  desc="A mental health's article that you can read, in order to increase your knowledge about mental health."
                 />
               </div>
               <div onClick={() => setImage(FeatureVideo)}>
                 <FeatureList 
                   title="Videos"
-                  desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum felis a neque pulvinar luctus."
+                  desc="There are videos of mental health on a different topic by an expert that you can watch and replay many times."
                 />
               </div>
               <div onClick={() => setImage(FeatureExpert)}>
                 <FeatureList 
                   title="Experts"
-                  desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum felis a neque pulvinar luctus."
+                  desc="Get closer to our experts and make the best meeting for your consultation in order to make your mental health even better."
                 />
               </div>
             </div>
