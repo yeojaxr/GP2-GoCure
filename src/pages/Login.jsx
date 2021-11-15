@@ -19,7 +19,7 @@ const Login = (props) => {
     if(user){
         const currentUser = user.find((u) => u.userLogged === true)
         if(currentUser){
-          navigate("/blogs")
+          navigate("/profile")
           setLog(true);
         }
       }
