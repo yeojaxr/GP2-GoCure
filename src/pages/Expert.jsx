@@ -24,7 +24,7 @@ const [experts, setExperts] = useState([]);
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-4">
                     {experts &&
                         experts.map((exp) => (
-                            <Card
+                            <PsiCard
                             key={exp.id}
                             title={exp.Name}
                             image={exp.imageUrl}
