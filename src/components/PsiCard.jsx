@@ -1,9 +1,10 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 const PsiCard = (props) => {
     return (
         <div>
-            <a href={props.url}>
+            <Link to={`/${props.category}/${props.id}`}>
                 <div className="flex bg-white hover:bg-pink-600 text-gray-900 hover:text-white rounded shadow-md py-2 px-4 cursor-pointer">
                     <div className="flex flex-row items-center">
                         <div className="">
@@ -19,7 +20,7 @@ const PsiCard = (props) => {
                         </div>
                     </div>
                 </div>
-            </a>
+            </Link>
         </div>
     )
 }

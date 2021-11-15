@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import React, {useState, useEffect} from 'react'
 import axios from "axios";
+import {LoadingPage} from "./LoadingPage"
 
 const Expert = () => {
 const [experts, setExperts] = useState([]);
@@ -15,6 +16,13 @@ const [experts, setExperts] = useState([]);
         setExperts(response.data);
       });
   }, []);
+
+  // loading
+  if(experts.length === 0){
+    return (
+      <LoadingPage/>
+    )
+  }
 
     return (
         <div className="bg-gray-50 h-screen">
@@ -31,7 +39,7 @@ const [experts, setExperts] = useState([]);
                               key={exp.id}
                               title={exp.Name}
                               image={exp.imageUrl}
-                              id={exp.Id}
+                              id={exp.id}
                               description="Psikolog"
                               category="experts"
                             />
