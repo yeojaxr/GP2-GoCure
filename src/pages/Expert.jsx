@@ -1,4 +1,4 @@
-import Card from "../components/Card";
+import PsiCard from "../components/PsiCard";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import React from 'react'
@@ -10,12 +10,12 @@ const Expert = () => {
                 <div className="">
                     <Header name="Experts" pic="expert-header.svg" />
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-4">
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
+                        <PsiCard />
+                        <PsiCard />
+                        <PsiCard />
+                        <PsiCard />
+                        <PsiCard />
+
                     </div>
                 </div>
                 <div className="flex items-center sticky h-screen">
