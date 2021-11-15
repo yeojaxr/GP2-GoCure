@@ -3,8 +3,6 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import React from "react";
 import useFetchArticle from "../services/articleApi";
-import { useEffect } from "react";
-import { useUser } from "../context/user-context";
 
 const Blog = () => {
   const { article } = useFetchArticle();

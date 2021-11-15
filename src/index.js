@@ -5,16 +5,19 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop"
 import { UserProvider } from "./context/user-context";
-import { VideosProvider } from "./context/video-context";
+import { BlogProvider } from "./context/blog-context";
+import { VideoProvider } from "./context/video-context";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <VideosProvider>
-          <ScrollToTop />
-        </VideosProvider>
-        <App />
+        <BlogProvider>
+          <VideoProvider>
+            <ScrollToTop />
+            <App />
+          </VideoProvider>
+        </BlogProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,
