@@ -1,4 +1,4 @@
-import Card from "../components/Card";
+import PsiCard from "../components/PsiCard";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import React, {useState, useEffect} from 'react'
