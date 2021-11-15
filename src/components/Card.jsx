@@ -6,7 +6,6 @@ import { useBlog } from "../context/blog-context";
 
 const Card = (props) => {
     const {likesBlog, dispatch} = useBlog();
-    let updateLike = false
     
     const [like, setLike] = useState(false)
     const [userLikes, setUserLikes] = useState("")
@@ -32,15 +31,16 @@ const Card = (props) => {
             image: props.image
         }
         setUserLikes(likes)
-        console.log("Hai")
         console.log(userLikes)
     },[])
     
     useEffect(()=>{
-        if(userLikes){
-            console.log("like array", userLikes);
-            dispatch({type: "ADD-BLOG", userLikes})
-        } 
+        if(props.page === "blogsPage"){
+            if(userLikes){
+                console.log("like array", userLikes);
+                dispatch({type: "ADD-BLOG", userLikes})
+            } 
+        }
     },[dispatch, userLikes])
     
     useEffect(()=>{
@@ -54,8 +54,7 @@ const Card = (props) => {
     function handleClick() {
         setLike(!like);
         dispatch({type: "UPDATE-BLOG", _id, _updateLike, _image, _category, _title})
-        updateLike = !updateLike
-        console.log("like clicked ", updateLike);
+        console.log("like clicked ", !like);
     }
 
     return (

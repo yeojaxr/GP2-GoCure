@@ -3,9 +3,21 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import React from "react";
 import useFetchArticle from "../services/articleApi";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import {LoadingPage} from "./LoadingPage"
 
 const Blog = () => {
   const { article } = useFetchArticle();
+  console.log("article", article);
+  const navigate = useNavigate();
+  
+  //  loading
+  if(article == null){
+    return (
+      <LoadingPage/>
+    )
+  }
 
   return (
     <div>
@@ -24,6 +36,7 @@ const Blog = () => {
                   image={art.ImageUrl}
                   id={art.Id}
                   category="blogs"
+                  page="blogsPage"
                 />
               ))}
           </div>

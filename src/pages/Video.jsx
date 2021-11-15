@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import React, {useState, useEffect, useContext} from "react";
 import axios from "axios";
+import {LoadingPage} from "./LoadingPage"
 
 const Video = () => {
   const [videos, setVideos] = useState([]);
@@ -15,6 +16,15 @@ const Video = () => {
         setVideos(response.data);
       });
   }, []);
+
+  console.log(videos)
+
+  // loading
+  if(videos.length === 0){
+    return (
+      <LoadingPage/>
+    )
+  }
 
   return (
     <div>

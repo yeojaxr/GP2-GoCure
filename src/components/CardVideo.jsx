@@ -38,10 +38,12 @@ const CardVideo = (props) => {
     },[])
     
     useEffect(()=>{
-        if(userLikes){
-            console.log("like array", userLikes);
-            dispatch({type: "ADD-VIDEO", userLikes})
-        } 
+        if(props.category === "videos"){
+            if(userLikes){
+                console.log("like array", userLikes);
+                dispatch({type: "ADD-VIDEO", userLikes})
+            }
+        }
     },[dispatch, userLikes])
     
     useEffect(()=>{

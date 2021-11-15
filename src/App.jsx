@@ -13,6 +13,7 @@ import { LoadingPage } from "./pages/LoadingPage";
 import PageNotFound from "./pages/PageNotFound";
 import ForbiddenPage from "./pages/ForbiddenPage";
 import InfoPsi from "./pages/InfoPsi";
+import Loading from "./components/Loading";
 
 
 function App() {
@@ -30,9 +31,9 @@ function App() {
           <Route path="/register" element={<Register />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/profile" element={<Profile />}/>
-          <Route path="/load" element={<LoadingPage />}/>
+          <Route path="/loading" element={<LoadingPage />}/>
           <Route path="*" element={<PageNotFound />}/>
-          <Route path="/403" element={<ForbiddenPage />}/>
+          <Route path="/403" element={<ForbiddenPage />}/> 
         </Routes>
       </main>
     </>
