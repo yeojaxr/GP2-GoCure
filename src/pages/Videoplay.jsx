@@ -52,7 +52,9 @@ const Videoplay = () => {
             <div className="px-5 md:px-12 lg:px-28 flex justify-center mt-10">
                 <iframe 
                     className="w-full h-64 md:h-96" 
-                    title="myFrame" 
+                    title="myFrame"
+                    allowFullScreen="allowFullScreen"
+                    frameBorder="0"
                     src={selectedVideo && selectedVideo.youtubeLink}>
                 </iframe>
             </div>

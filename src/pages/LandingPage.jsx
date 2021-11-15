@@ -8,16 +8,18 @@ import React, { useState } from "react";
 import LogoImg from '../images/logo.svg';
 import SmallButton from "../components/SmallButton";
 import SmallText from "../components/SmallText";
-import Alert from "../components/Alert";
 import "../css/style.css";
 import BgImg from "../images/bg-wave.svg";
 import Testimonial from "../components/Testimonial";
 import TestiList from "../components/TestiList";
 import { useUser } from "../context/user-context";
-import Navbar from "../components/Navbar";
 
 export default function LandingPage() {
   const [image, setImage] = useState(FeatureBlog)
+  const [imageTesti, setImageTesti] = useState("testi-1.png")
+  const [nameTesti, setNameTesti] = useState("William Hill")
+  const [descTesti, setDescTesti] = useState("I'm a sorcerer hunter who is working hard to achieve success and sometime i always said to be a burden on parents. It made me depressed. but at GoCure, I can easily tell my condition I'm experiencing, as time goes by my depression gone by itself")
+
   const {user} = useUser();
   let currUser = false;
 
@@ -122,28 +124,47 @@ export default function LandingPage() {
               What our user think about <b>GoCure</b>
             </div>
             <Testimonial             
-              name="Toji Fushiguro" 
-              roles="I am a sorcerer hunter who is still working hard to achieve success and sometime i always said to be a burden on parents. It made me depressed. but at GoCure, I can easily tell about the condition I'm experiencing, as time goes by my depression gone by itself."    
+              name={nameTesti} 
+              roles={descTesti}  
+              img={imageTesti}  
             />
             <div className="flex flex-col">
               <div className="hidden md:block font-bold text-4xl pb-2">
                 What our user think about <b>GoCure</b>
               </div>
-              <TestiList 
-                img="avatar-gojo.png" 
-                name="Satoru Gojo" 
-                roles="Tokyo Jujutsu High, Teacher" 
-              />
-              <TestiList 
-                img="avatar-yuji.png" 
-                name="Yuji Itadori" 
-                roles="Tokyo Jujutsu High, 1st Year Student" 
-              />
-              <TestiList 
-                img="avatar-toji.png" 
-                name="Toji Fushiguro" 
-                roles="Ex-member, Zenin Family" 
-              />
+              <div onClick={() => {
+                setImageTesti("testi-1.png"); 
+                setNameTesti("William Hill");
+                setDescTesti("I'm a sorcerer hunter who is working hard to achieve success and sometime i always said to be a burden on parents. It made me depressed. but at GoCure, I can easily tell my condition I'm experiencing, as time goes by my depression gone by itself")
+                }}>
+                <TestiList 
+                  img="testi-1-avatar.png" 
+                  name="William Hill" 
+                  roles="Schneider Electric, IoT Developer" 
+                />
+              </div>
+              <div onClick={() => {
+                setImageTesti("testi-2.png"); 
+                setNameTesti("Sarah Kehl");
+                setDescTesti("Last year I started experiencing anxiety which was triggered by acute stress. GoCure has helped me develop relaxation techniques, and has made me think differently about things that were troubling me as well as giving me other coping techniques.")
+                }}>
+                <TestiList 
+                  img="testi-2-avatar.png" 
+                  name="Sarah Kehl" 
+                  roles="Gojek Indonesia, Data Engineer" 
+                  />
+              </div>
+              <div onClick={() => {
+                setImageTesti("testi-3.png"); 
+                setNameTesti("Sabrina Centrica");
+                setDescTesti("Completing some of the Series within GoCure has really helped me get back on track with my productivity at work. GoCure helps me to look at things differently so I can minimise the impact of things like change. It provides me with ways to cope")
+                }}>
+                <TestiList 
+                  img="testi-3-avatar.png" 
+                  name="Sabrina Centrica" 
+                  roles="Telkom University, 1st Year Student" 
+                  />
+              </div>
             </div>
           </div>
         </section>
