@@ -12,6 +12,7 @@ import Profile from "./pages/Profile";
 import { LoadingPage } from "./pages/LoadingPage";
 import PageNotFound from "./pages/PageNotFound";
 import ForbiddenPage from "./pages/ForbiddenPage";
+import InfoPsi from "./pages/InfoPsi";
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
           <Route path="/videos" element={<Videos />}/>
           <Route path="/videos/:id" element={<Videoplay />}/>
           <Route path="/experts" element={<Expert />}/>
-          <Route path="/experts/:id" element={<Expert />}/>
+          <Route path="/experts/:id" element={<InfoPsi />}/>
           <Route path="/register" element={<Register />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/profile" element={<Profile />}/>

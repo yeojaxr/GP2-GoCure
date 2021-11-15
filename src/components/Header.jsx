@@ -14,7 +14,7 @@ const Header = (props) => {
                             {props.name}
                         </p>
                         </div>
-                        <img src={props.pic} alt="head" className="object-cover h-max md:h-52 w-1/3" />
+                        <img src={props.pic} alt="head" className="object-cover h-max md:h-52 w-1/3 rounded-tr-md rounded-br-md" />
                     </div>
                 </div>
             </a>
