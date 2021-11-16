@@ -98,6 +98,9 @@ export default function LandingPage() {
                 <b>GoCure</b> is a platform for helping our user to keep their
                 mental health keep healthy and safe through our content
               </p>
+              <div className="pt-8 md:pt-14 flex flex-row gap-x-8"> 
+                <SmallButton title="Our Teams" url="/teams"/>
+              </div>
             </div>
             <img className="hidden md:block pt-0 w-72 md:w-96" src={ProfileImg} alt="" />
           </div>

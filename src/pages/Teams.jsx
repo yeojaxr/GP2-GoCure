@@ -45,7 +45,7 @@ const Teams = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4">
                     <DevCard
-                        img="tojj.jpg"
+                        img="team-randy.png"
                         name="Randy Christian"
                         campus="Universitas Brawijaya"
                         roles="Leader, Frontend Developer" 
@@ -57,15 +57,15 @@ const Teams = () => {
                         roles="Designer, Frontend Developer" 
                     />
                     <DevCard
-                        img="tojj.jpg"
+                        img="team-ike.png"
                         name="Ike Nurul Fatihah"
                         campus="Universitas Jember"
                         roles="Data Engineer, Frontend Developer" 
                     />
                     <DevCard
-                        img="tojj.jpg"
+                        img="team-azadin.png"
                         name="Azadin Azhar Purba"
-                        campus="Univ"
+                        campus="Politeknik Negeri Medan"
                         roles="Frontend Developer" 
                     />
                 </div>
