@@ -12,17 +12,18 @@ const Blog = () => {
   console.log("article", article);
   
   const navigate = useNavigate();
-  const {user, dispatch} = useUser();
+  const {user} = useUser();
 
+  // Return to landing page if user not login
   useEffect(() => {
     if(user){
-        if(user.length !== 0){
-            const currentUser = user.find((u) => u.userLogged === true)
-            if(currentUser){
-                navigate("/profile")
-            }
-        }
-    } else navigate("/")
+      if(user.length !== 0){
+        const currentUser = user.find((u) => u.userLogged === true)
+        if(currentUser){
+          navigate("/blogs")
+        } else navigate("/")
+      } else navigate("/")
+    }
   }, [user, navigate])
   
   //  loading
