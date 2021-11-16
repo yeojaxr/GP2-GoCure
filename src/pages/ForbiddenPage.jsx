@@ -7,16 +7,16 @@ const ForbiddenPage = () => {
             <div className="flex flex-col h-screen">
                 <div className="flex flex-col h-screen items-center justify-center">
                     <div className="flex gap-x-8 items-center select-none">
-                        <div className="font-bold text-5xl">
+                        <div className="font-bold text-3xl md:text-5xl">
                             403
                         </div>
-                        <div className="text-xl font-bold">
+                        <div className="text-sm md:text-xl font-bold">
                             Forbidden
                         </div>
                     </div>
                 </div>
                 <div className="flex justify-center pb-9">
-                        <img className="h-8" src={LogoImg} alt="" />   
+                    <img className="h-8" src={LogoImg} alt="" />   
                 </div>
             </div>
         </div>

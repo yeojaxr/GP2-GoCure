@@ -14,6 +14,7 @@ import PageNotFound from "./pages/PageNotFound";
 import ForbiddenPage from "./pages/ForbiddenPage";
 import InfoPsi from "./pages/InfoPsi";
 import useAuth from "./services/useAuth";
+import Teams from "./pages/Teams";
 
 function PrivateOutlet() {
   const auth = useAuth();
@@ -29,7 +30,9 @@ function App() {
           <Route path="/register" element={<Register />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/" element={<LandingPage />}/>
-         
+
+          <Route path="/teams" element={<Teams />} />
+        
           <Route path="*" element={<PageNotFound />}/>
           <Route path="/forbidden" element={<ForbiddenPage />}/>
           
