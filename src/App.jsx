@@ -17,12 +17,12 @@ import useAuth from "./services/useAuth";
 import Teams from "./pages/Teams";
 
 function PrivateOutlet() {
-  const auth = useAuth();
+  const auth = !useAuth();
   return auth ? <Outlet /> : <Navigate to="/403" />;
 }
 
 function PrivateLandingPage() {
-  const auth = !useAuth();
+  const auth = useAuth();
   return auth ? <Outlet /> : <Navigate to="/profile" />;
 }
 
@@ -32,17 +32,23 @@ function App() {
       <main>
         <Routes>
 
-          {/* <Route path="/" element={<LandingPage />}/> */}
+          <Route path="/register" element={<Register />}/> */}
+          <Route path="/login" element={<Login />}/>
+          <Route path="/" element={<LandingPage />}/>
 
+          {/* 
           <Route path="/" element={<PrivateLandingPage />}>
             <Route element={<LandingPage />} />
           </Route>
+
           <Route path="/register" element={<PrivateLandingPage />}>
             <Route element={<Register />} />
           </Route>
+
           <Route path="/login" element={<PrivateLandingPage />}>
             <Route element={<Login />} />
           </Route>
+          */}
 
           {/* AKU NAMBAHIN PAGE BARU LAGI BUAT PENGENALAN TIM, TOLONG DIBAIKIN */}
           <Route path="/teams" element={<Teams />} />
