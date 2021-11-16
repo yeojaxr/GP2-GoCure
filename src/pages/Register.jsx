@@ -70,10 +70,15 @@ const Register = (props) => {
                                             {/* Form 1 */}
                                             <div className="flex flex-wrap pt-3">
                                                 <div className="w-full">
-                                                <label className="tracking-wide text-sm font-bold">Name*</label>
+                                                <label className="tracking-wide text-sm font-bold">
+                                                    Name<b>*</b>
+                                                </label>
                                                 <input
-                                                    className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                                    placeholder="John Doe" id='name' value={name} onChange={(e) => setName(e.target.value)}
+                                                    className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-gray-50 focus:border-gray-300"
+                                                    placeholder="John Doe"
+                                                    id='name' 
+                                                    value={name} 
+                                                    onChange={(e) => setName(e.target.value)}
                                                 />
                                                 </div>
                                             </div>
@@ -82,10 +87,16 @@ const Register = (props) => {
                                             {/* Form 2 */}
                                             <div className="flex flex-wrap pt-3">
                                                 <div className="w-full">
-                                                <label className="tracking-wide text-sm font-bold">Email*</label>
+                                                <label className="tracking-wide text-sm font-bold">
+                                                    Email<b>*</b>
+                                                </label>
                                                 <input
-                                                    className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                                    placeholder="johndoe@mail.com" id='email' type="email" value={email} onChange={(e) => setEmail(e.target.value)}
+                                                    className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-gray-50 focus:border-gray-300"
+                                                    placeholder="johndoe@mail.com" 
+                                                    id='email' 
+                                                    type="email" 
+                                                    value={email} 
+                                                    onChange={(e) => setEmail(e.target.value)}
                                                     />
                                                 </div>
                                             </div>
@@ -94,10 +105,16 @@ const Register = (props) => {
                                             {/* Form 3 */}
                                             <div className="flex flex-wrap pt-3">
                                                 <div className="w-full">
-                                                <label className="tracking-wide text-sm font-bold">Password*</label>
+                                                <label className="tracking-wide text-sm font-bold">
+                                                    Password<b>*</b>
+                                                </label>
                                                 <input
-                                                    className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                                    placeholder="*********" id='password' type="password" value={password} onChange={(e) => setPassword(e.target.value)}
+                                                    className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-gray-50 focus:border-gray-300"
+                                                    placeholder="*********" 
+                                                    id='password' 
+                                                    type="password" 
+                                                    value={password} 
+                                                    onChange={(e) => setPassword(e.target.value)}
                                                     />
                                                 </div>
                                             </div>
@@ -106,15 +123,24 @@ const Register = (props) => {
                                             {/* Form 4 */}
                                             <div className="flex flex-wrap pt-3">
                                                 <div className="w-full">
-                                                <label className="tracking-wide text-sm font-bold">Confirm Password*</label>
+                                                <label className="tracking-wide text-sm font-bold">
+                                                    Confirm Password<b>*</b>
+                                                </label>
                                                 <input
-                                                    className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                                    placeholder="*********" id='confirmPassword' type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}
+                                                    className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-gray-50 focus:border-gray-300"
+                                                    placeholder="*********" 
+                                                    id='confirmPassword' 
+                                                    type="password" 
+                                                    value={confirmPassword} 
+                                                    onChange={(e) => setConfirmPassword(e.target.value)}
                                                     />
                                                 </div>
                                             </div>
                                         </div>
+                                        <div className="pt-3">
+
                                         {alert ? <Alert alertMsg={alertMsg}/> : ""}
+                                        </div>
                                         <div className="flex justify-center md:justify-start pt-8 md:pt-5">
                                             <button onClick={handleRegister} className="py-2.5 px-5 bg-purple-600 hover:bg-pink-600 rounded-md text-white text-sm font-bold">
                                                 Register

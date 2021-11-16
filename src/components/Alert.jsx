@@ -2,9 +2,9 @@ import React from "react";
 
 const Alert = (props) => {
   return (
-    <div class="flex bg-blue-100 rounded-lg p-4 mb-4">
+    <div class="flex bg-blue-50 rounded-lg px-4 py-2.5 mb-4">
       <svg
-        class="w-5 h-5 text-purple-900"
+        class="w-5 h-5 text-purple-700"
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
@@ -15,10 +15,9 @@ const Alert = (props) => {
           clip-rule="evenodd"
         ></path>
       </svg>
-      <p class="ml-3 text-sm text-purple-900">
-        {/* <span class="font-medium">Important Note!</span>{" "} */}
-        <b>{props.alertMsg}</b>
-      </p>
+      <div class="ml-3 text-xs mt-0.5">
+        <p className="font-bold text-red-600">{props.alertMsg}</p>
+      </div>
     </div>
   );
 }
