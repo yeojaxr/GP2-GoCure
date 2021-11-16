@@ -42,21 +42,29 @@ export default function userReducer(user, action){
             );
         }
         
-        case "LIKE-BLOG":{
-            const{ userBlogLikes, countClick } = action;
-
-            if (countClick > 0){
-                console.log("Hellow its > 0")
-                return user.map((u) =>
-                    u.userLogged === true ? { ...u, userBlogLikes: [userBlogLikes] } : u
-                ); 
-            } else{
-                console.log("Hellow its else")
-                return user.map((u) =>
-                    u.userLogged === true ? { ...u, userBlogLikes: [userBlogLikes] } : u
-                ); 
+        case "CLEAR-USER": 
+            if (user === undefined){
+                return [];
+            } else {
+                return user;
             }
-        }
+        break;
+        
+        // case "LIKE-BLOG":{
+        //     const{ userBlogLikes, countClick } = action;
+
+        //     if (countClick > 0){
+        //         console.log("Hellow its > 0")
+        //         return user.map((u) =>
+        //             u.userLogged === true ? { ...u, userBlogLikes: [userBlogLikes] } : u
+        //         ); 
+        //     } else{
+        //         console.log("Hellow its else")
+        //         return user.map((u) =>
+        //             u.userLogged === true ? { ...u, userBlogLikes: [userBlogLikes] } : u
+        //         ); 
+        //     }
+        // }
 
         default:
             throw new Error("Unhandled action " + action.type);
