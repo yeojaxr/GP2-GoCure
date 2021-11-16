@@ -27,7 +27,6 @@ const NavbarRow = () => {
 
                 <Link className="px-6" to="/">
                     <img className="w-6 md:w-7 xl:w-8" src={LogoutImg} />
-                    {dispatch({type: "LOGOUT"})}
                 </Link>
             </div>
         </div>

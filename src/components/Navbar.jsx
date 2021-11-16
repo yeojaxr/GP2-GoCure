@@ -9,6 +9,10 @@ import { useUser } from "../context/user-context";
 
 const Navbar = () => {
     const {user, dispatch} = useUser();
+    function handleClick() {
+        dispatch({type: "LOGOUT"})
+    }
+
     return (
         <div>
             <div className="flex flex-col items-center">
@@ -25,9 +29,8 @@ const Navbar = () => {
                     <img className="w-6 md:w-7 xl:w-8" alt="experts" src={ExpertsImg} />
                 </Link>
 
-                <Link className="py-12" to="/">
+                <Link to="/" className="py-12" onClick={() => handleClick()}>
                     <img className="w-6 md:w-7 xl:w-8" alt="logout" src={LogoutImg} />
-                    {dispatch({type: "LOGOUT"})}
                 </Link>
             </div>
         </div>

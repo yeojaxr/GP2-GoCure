@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import BlogImg from "../images/profile/blog.svg"
 import VideoImg from "../images/profile/video.svg"
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useBlog } from "../context/blog-context";
 import { useVideo } from "../context/video-context";
 import CardVideo from "../components/CardVideo";
@@ -13,8 +13,10 @@ const Profile = () => {
     const {user} = useUser();
     const [userName, setUserName] = useState("");
 
-    const currentUser = user.find((u) => u.userLogged === true);
-    currentUser && setUserName(currentUser.name);
+    useEffect(()=>{
+        const currentUser = user.find((u) => u.userLogged === true);
+        currentUser && setUserName(currentUser.name);
+    },[user])
 
     const {likesBlog} = useBlog();
     const isBlogExist = likesBlog.filter(item => item.userLikes.like === true);

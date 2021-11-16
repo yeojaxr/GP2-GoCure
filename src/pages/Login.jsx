@@ -6,19 +6,21 @@ import { useNavigate, Link } from "react-router-dom";
 
 const Login = (props) => {
   const {user, dispatch} = useUser();
+  const navigate = useNavigate();
+
   const [userLogged, setLogged] = useState(false);
-  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [logSuccess, setLog] = useState(false);
-  const navigate = useNavigate();
+  const [checkEmail, setCheckEmail] = useState("");
+  const [checkPass, setCheckPass] = useState("");
 
   useEffect(() => {
     console.log("userLocal login", user)
     setLogged(true);
     if(user){
-        const currentUser = user.find((u) => u.userLogged === true)
-        if(currentUser){
+      const currentUser = user.find((u) => u.userLogged === true)
+      if(currentUser){
           navigate("/profile")
           setLog(true);
         }
@@ -30,12 +32,13 @@ const Login = (props) => {
       
   function handleLogin (e) {
     e.preventDefault();
-    dispatch({ type: "LOGIN", email, password, userLogged });
+    console.log(userLogged)
     setLog(true);
+
+    dispatch({ type: "LOGIN", email, password, userLogged });
   };
 
   function redirectRegister() {
-    dispatch({type: "CLEAR-USER"})
     return(
       <>
         <p className="text-sm pb-6">You don't have an account please 
@@ -100,6 +103,7 @@ const Login = (props) => {
                             className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-gray-50 focus:border-gray-300"
                             placeholder="*********"
                             id="password"
+                            type="password" 
                             value={password}
                             onChange={(e) =>
                               setPassword(e.target.value)
@@ -116,6 +120,16 @@ const Login = (props) => {
                       >
                         Login
                       </button>
+                    </div>
+                    <div className="pt-2 justify-center flex md:justify-start">
+                      {
+                        !logSuccess ? (
+                        <p className="text-sm pb-6">Don't have an account? 
+                            <Link to="/register">
+                                <b> Register</b>
+                            </Link>
+                        </p>) : ""
+                      }
                     </div>
                   </form>
                 </div>
