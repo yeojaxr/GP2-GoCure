@@ -56,12 +56,12 @@ const Videoplay = () => {
                     allowFullScreen="allowFullScreen"
                     frameBorder="0"
                     src={selectedVideo && selectedVideo.youtubeLink}>
-                </iframe>
+                </iframe>  
             </div>
 
             {/* ADJUST WIDTH */}
             <div className="px-5 md:px-12 lg:px-28 xl:px-30 2xl:px-60">
-                <div className="py-10 grid grid-cols-1 md:grid-cols-3 gap-x-6">
+                <div className="pt-10 pb-20 grid grid-cols-1 md:grid-cols-3 gap-x-6">
 
                     {/* CONTENT */}
                     <div className="col-span-2 text-sm md:text-md leading-relaxed text-justify">
@@ -112,7 +112,6 @@ const Videoplay = () => {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div className="botbar flex w-full justify-center pb-5">

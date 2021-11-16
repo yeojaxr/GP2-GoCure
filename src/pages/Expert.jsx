@@ -42,8 +42,8 @@ const {user} = useUser();
 
     return (
         <div className="bg-gray-50 h-screen">
-            <div className="flex justify-center gap-x-4 md:gap-x-8 px-4 sm:px-4 lg:px-40 xl:px-60 2xl:px-96"> 
-                <div className="pr-10 md:pr-16 lg:pr-0">
+            <div className="flex justify-center gap-x-4 md:gap-x-8 px-3 sm:px-4 lg:px-40 xl:px-60 2xl:px-96 py-3"> 
+                <div className="pr-10 md:pr-16 lg:pr-0 w-full">
                     <Header 
                       name="Experts" 
                       pic="expert-header.svg" 
@@ -63,7 +63,7 @@ const {user} = useUser();
                     </div>
                 </div>
             </div>
-            <div className="sidebar flex items-center pr-4 md:pr-6 lg:pr-24 xl:pr-44 py-40 xl:py-64">
+            <div className="sidebar flex items-center pr-1 md:pr-6 lg:pr-24 xl:pr-44 py-40 xl:py-64">
               <Navbar />
             </div>
         </div>

@@ -21,19 +21,19 @@ const Profile = () => {
 
     return (
         <div>
-            <div className="flex justify-center gap-x-4 lg:px-40 xl:px-60 2xl:px-96"> 
-                <div className="w-full">
+            <div className="flex justify-center gap-x-4 md:gap-x-8 px-3 sm:px-4 lg:px-40 xl:px-60 2xl:px-96 py-3"> 
+                <div className="pr-10 md:pr-16 lg:pr-0 w-full">
                     <div>
                         <Header hi="Hello" name={currentUser.name} pic="tojj.jpg" />
                     </div>
-                    <div className="pb-4 text-lg font-bold">
+                    <div className="pb-4 text-md md:text-lg font-bold">
                         Blog that you liked
                     </div>
                     <div className="pt-4 flex flex-col gap-y-5 justify-center items-center">
                         {isBlogExist.length === 0 &&
                             (<>
-                                <img className="h-36" alt="blogs not found" src={BlogImg} />
-                                <p className="font-semibold">Don't have liked Blog</p> 
+                                <img className="h-28 md:h-36" alt="blogs not found" src={BlogImg} />
+                                <p className="text-sm md:text-mb font-semibold">Don't have liked Blog</p> 
                             </>)   
                         }
                     </div>
@@ -49,14 +49,14 @@ const Profile = () => {
                                 />
                             ))}
                     </div>
-                    <div className="pt-6 pb-4 text-lg font-bold">
+                    <div className="pt-6 pb-4 text-md md:text-lg font-bold">
                         Video that you liked
                     </div>
                     <div className="pt-4 flex flex-col gap-y-5 justify-center items-center">
                         {isVideoExist.length === 0 &&
                             (<>
-                                <img className="h-36" alt="blogs not found" src={VideoImg} />
-                                <p className="font-semibold">Don't have liked Video</p> 
+                                <img className="h-28 md:h-36" alt="blogs not found" src={VideoImg} />
+                                <p className="text-sm md:text-mb font-semibold">Don't have liked Video</p> 
                             </>)   
                         }
                     </div>
@@ -72,9 +72,10 @@ const Profile = () => {
                             />
                         ))}
                     </div>
+                    <div className="py-6"></div>
                 </div>
             </div>
-            <div className="sidebar flex items-center pr-4 md:pr-6 lg:pr-24 xl:pr-44 py-40 xl:py-64">
+            <div className="sidebar flex items-center pr-1 md:pr-6 lg:pr-24 xl:pr-44 py-40 xl:py-64">
                 <Navbar />
             </div>
         </div>

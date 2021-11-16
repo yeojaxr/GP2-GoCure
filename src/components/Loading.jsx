@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Loading = () => {
-    let circleCommonClasses = 'h-6 w-6 bg-white rounded-full';
+    let circleCommonClasses = 'h-4 md:h-6 w-4 md:w-6 bg-white rounded-full';
 
     return (
         <div className='flex'>

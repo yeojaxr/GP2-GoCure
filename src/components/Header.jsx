@@ -2,15 +2,15 @@ import React from 'react'
 
 const Header = (props) => {
     return (
-        <div className="pt-4 pb-4 md:pb-8">
+        <div className="pb-4 md:pb-8">
             <a href={props.url}>
                 <div className="bg-purple-700 rounded-md py-3 md:py-0">
                     <div className="h-full flex flex-wrap items-end content-end justify-between">
-                        <div className="flex flex-col pl-6 pb-6">
-                        <p className="text-xl text-white pb-1">
+                        <div className="flex flex-col pl-3 md:pl-6 md:pb-6">
+                        <p className="text-sm md:text-xl text-white md:pb-1">
                             {props.hi}
                         </p>
-                        <p className="text-3xl text-white font-bold">
+                        <p className="text-xl md:text-3xl text-white font-bold">
                             {props.name}
                         </p>
                         </div>

@@ -55,7 +55,7 @@ const Article = () => {
                     {/* HEAD */}
                     <div className="bg-purple-800">
                         <div className="grid grid-cols-1 md:grid-cols-2">
-                            <div className="pt-0 md:pt-52 pl-5 md:pl-7 lg:pl-16 xl:pl-36 pr-8 md:pr-6 pb-12 md:pb-16">
+                            <div className="pt-0 md:pt-52 pl-5 md:pl-7 lg:pl-16 xl:pl-36 pr-16 md:pr-6 pb-12 md:pb-16">
                                 <div className="pt-16 md:pt-56 pb-0 md:pb-4">
                                     <div className="py-0 md:py-4 text-2xl md:text-3xl lg:text-4xl font-bold text-white">
                                         {selectedArticle.length === undefined ? <div className="pb-16">Loading</div> : selectedArticle[0].Title}
@@ -130,7 +130,7 @@ const Article = () => {
 
             </div>
             <div className="sidebar flex items-center pr-2 md:pr-3 lg:pr-4 xl:pr-16 py-36 lg:py-40 xl:py-64">
-                <div className="bg-white px-2.5 md:px-3 lg:px-4 rounded-full">
+                <div className="bg-white py-3 rounded-full">
                 <Navbar />
                 </div>
             </div>

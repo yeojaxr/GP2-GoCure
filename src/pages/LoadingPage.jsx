@@ -8,7 +8,7 @@ export const LoadingPage = () => {
             <div className="flex flex-col h-screen">
                 <div className="flex flex-col h-screen items-center justify-center">
                 <Loading />
-                <div className="pt-6 text-white text-xl font-bold select-none">
+                <div className="pt-4 md:pt-6 text-white text-md md:text-xl font-bold select-none">
                     Please Wait
                 </div>
                 </div>
