@@ -144,7 +144,6 @@ const Register = (props) => {
                                             </div>
                                         </div>
                                         <div className="pt-3">
-
                                         {alert ? <Alert alertMsg={alertMsg}/> : ""}
                                         </div>
                                         <div className="flex justify-center md:justify-start pt-8 md:pt-5">
