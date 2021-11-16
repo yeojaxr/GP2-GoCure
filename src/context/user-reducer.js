@@ -13,7 +13,6 @@ export default function userReducer(user, action){
                     return [...user, { name, email, password, userLogged }]
                 }
             } else return user;
-        break;
 
         case "LOGIN": {
             const { email, password } = action;
@@ -38,7 +37,6 @@ export default function userReducer(user, action){
                 return user;
             }
         }
-        break;
 
         case "LOGOUT":{
             return user.map((u) =>
@@ -52,7 +50,6 @@ export default function userReducer(user, action){
             } else {
                 return user;
             }
-        break;
         
         // case "LIKE-BLOG":{
         //     const{ userBlogLikes, countClick } = action;
