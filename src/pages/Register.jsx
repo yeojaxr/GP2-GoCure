@@ -9,6 +9,7 @@ const Register = (props) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [userLogged, setLogged] = useState(false);
     const navigate = useNavigate();
 
@@ -27,8 +28,16 @@ const Register = (props) => {
     
     function handleRegister (e) {
         e.preventDefault();
-        dispatch({ type: "REGISTER", name, email, password, userLogged });
+        if (name === "" || email === "" || password === "" || confirmPassword === "") {
+            alert("Isi data terlebih dahulu")
+        }
+        else if (password !== confirmPassword){
+            alert("Password yang anda masukan tidak sama.")
+        }
+        else{
+            dispatch({ type: "REGISTER", name, email, password, userLogged });
         console.log("user1", user)
+        }
     };
 
     return (
@@ -71,7 +80,7 @@ const Register = (props) => {
                                                 <label className="tracking-wide text-sm font-bold">Email</label>
                                                 <input
                                                     className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                                    placeholder="johndoe@mail.com" id='email' value={email} onChange={(e) => setEmail(e.target.value)}
+                                                    placeholder="johndoe@mail.com" id='email' type="email" value={email} onChange={(e) => setEmail(e.target.value)}
                                                 />
                                                 </div>
                                             </div>
@@ -83,7 +92,19 @@ const Register = (props) => {
                                                 <label className="tracking-wide text-sm font-bold">Password</label>
                                                 <input
                                                     className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                                    placeholder="*********" id='password' value={password} onChange={(e) => setPassword(e.target.value)}
+                                                    placeholder="*********" id='password' type="password" value={password} onChange={(e) => setPassword(e.target.value)}
+                                                />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            {/* Form 4 */}
+                                            <div className="flex flex-wrap pt-3">
+                                                <div className="w-full">
+                                                <label className="tracking-wide text-sm font-bold">Confirm Password</label>
+                                                <input
+                                                    className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                                    placeholder="*********" id='confirmPassword' type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}
                                                 />
                                                 </div>
                                             </div>
