@@ -3,7 +3,7 @@ import React from 'react'
 
 const ForbiddenPage = () => {
     return (
-        <div className="bg-red-700 h-screen text-white">
+        <div className="bg-pink-700 h-screen text-white">
             <div className="flex flex-col h-screen">
                 <div className="flex flex-col h-screen items-center justify-center">
                     <div className="flex gap-x-8 items-center select-none">
