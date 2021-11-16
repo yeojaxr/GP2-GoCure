@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate, Outlet } from "react-router-dom";
 import Article from "./pages/Article";
 import Blog from "./pages/Blog";
 import LandingPage from "./pages/LandingPage";
@@ -13,27 +13,62 @@ import { LoadingPage } from "./pages/LoadingPage";
 import PageNotFound from "./pages/PageNotFound";
 import ForbiddenPage from "./pages/ForbiddenPage";
 import InfoPsi from "./pages/InfoPsi";
-import Loading from "./components/Loading";
+import useAuth from "./services/useAuth";
 
+function PrivateOutlet() {
+  const auth = useAuth();
+  return auth ? <Outlet /> : <Navigate to="/" />;
+}
+
+function PrivateLandingPage() {
+  const auth = !useAuth();
+  return auth ? <Outlet /> : <Navigate to="/profile" />;
+}
 
 function App() {
   return (
     <>
       <main>
         <Routes>
-          <Route path="/" element={<LandingPage />}/>
-          <Route path="/blogs" element={<Blog />}/>
-          <Route path="/blogs/:id" element={<Article />}/>
-          <Route path="/videos" element={<Videos />}/>
-          <Route path="/videos/:id" element={<Videoplay />}/>
-          <Route path="/experts" element={<Expert />}/>
-          <Route path="/experts/:id" element={<InfoPsi />}/>
-          <Route path="/register" element={<Register />}/>
-          <Route path="/login" element={<Login />}/>
-          <Route path="/profile" element={<Profile />}/>
-          <Route path="/loading" element={<LoadingPage />}/>
+
+          <Route path="/" element={<PrivateLandingPage />}>
+            <Route element={<LandingPage />} />
+          </Route>
+          <Route path="/register" element={<PrivateLandingPage />}>
+            <Route element={<Register />} />
+          </Route>
+          <Route path="/login" element={<PrivateLandingPage />}>
+            <Route element={<Login />} />
+          </Route>
+
           <Route path="*" element={<PageNotFound />}/>
-          <Route path="/403" element={<ForbiddenPage />}/> 
+          <Route path="/403" element={<ForbiddenPage />}/>
+          
+          <Route path="/blogs" element={<PrivateOutlet />}>
+            <Route element={<Blog />} />
+          </Route>
+          <Route path="/blogs/:id" element={<PrivateOutlet />}>
+            <Route element={<Article />} />
+          </Route>
+          <Route path="/videos" element={<PrivateOutlet />}>
+            <Route element={<Videos />} />
+          </Route>
+          <Route path="/videos:id" element={<PrivateOutlet />}>
+            <Route element={<Videoplay />} />
+          </Route>
+          <Route path="/experts" element={<PrivateOutlet />}>
+            <Route element={<Expert />} />
+          </Route>
+          <Route path="/experts:id" element={<PrivateOutlet />}>
+            <Route element={<InfoPsi />} />
+          </Route>
+          <Route path="/profile" element={<PrivateOutlet />}>
+            <Route element={<Profile />} />
+          </Route>
+          <Route path="/loading" element={<PrivateOutlet />}>
+            <Route element={<LoadingPage />} />
+          </Route>
+
         </Routes>
       </main>
     </>

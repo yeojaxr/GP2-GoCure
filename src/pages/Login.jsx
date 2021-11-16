@@ -34,6 +34,19 @@ const Login = (props) => {
     setLog(true);
   };
 
+  function redirectRegister() {
+    dispatch({type: "CLEAR-USER"})
+    return(
+      <>
+        <p className="text-sm pb-6">You don't have an account please 
+          <Link to="/register">
+            <b> Register</b>
+          </Link>
+        </p>
+      </>
+    )
+  }
+
   console.log(logSuccess)
 
   return (
@@ -96,14 +109,7 @@ const Login = (props) => {
                       </div>
                     </div>
                     <div className="flex justify-center md:justify-start pt-8 md:pt-3">
-                      { logSuccess 
-                        ? <><p className="text-sm pb-6">You don't have an account please 
-                            <Link to="/register">
-                              <b> Register</b>
-                            </Link>
-                          </p>
-                          </>
-                        : ""}
+                      { logSuccess ? redirectRegister() : ""}
                       <button
                         onClick={handleLogin}
                         className={"py-2.5 px-5 bg-purple-600 hover:bg-pink-600 rounded-md text-white text-sm font-bold"}
