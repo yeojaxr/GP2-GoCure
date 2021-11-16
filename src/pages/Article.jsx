@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import useFetchArticle from "../services/articleApi";
 import Content from '../components/ContentArticle';
 import Navbar from '../components/Navbar';
+import {LoadingPage} from "./LoadingPage"
 
 const Article = () => {
     const { id } = useParams();
@@ -30,8 +31,12 @@ const Article = () => {
         }
     },[article, id]);
 
-    console.log(article);
-
+    useEffect(() => {
+        setOtherArticle1(getRandomWithOneExclusion(16, indexSelectedContent))
+        setOtherArticle2(getRandomWithOneExclusion(16, otherArticle1))
+        setOtherArticle3(getRandomWithOneExclusion(16, otherArticle2))
+    },[article, id]);
+    
     function getRandomWithOneExclusion(lengthOfArray,indexToExclude){
         let rand = null;  //an integer
 
@@ -41,13 +46,12 @@ const Article = () => {
         return rand;
     }
 
-    useEffect(() => {
-        setOtherArticle1(getRandomWithOneExclusion(16, indexSelectedContent))
-        setOtherArticle2(getRandomWithOneExclusion(16, otherArticle1))
-        setOtherArticle3(getRandomWithOneExclusion(16, otherArticle2))
-    },[article, id]);
-
-
+    if(selectedArticle.length === undefined){
+        return (
+          <LoadingPage/>
+        )
+    }
+    
     return (
         <div>
             <div className="flex justify-center gap-x-2 md:gap-x-8">

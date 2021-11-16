@@ -19,20 +19,6 @@ const [experts, setExperts] = useState([]);
       });
   }, []);
 
-const navigate = useNavigate();
-const {user} = useUser();
-
-  useEffect(() => {
-    if(user){
-      if(user.length !== 0){
-        const currentUser = user.find((u) => u.userLogged === true)
-        if(currentUser){
-          navigate("/experts")
-        } else navigate("/")
-      } else navigate("/")
-    }
-  }, [user, navigate])
-
   // loading
   if(experts.length === 0){
     return (

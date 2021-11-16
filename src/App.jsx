@@ -45,13 +45,13 @@ function App() {
           <Route path="/videos" element={<PrivateOutlet />}>
             <Route element={<Videos />} />
           </Route>
-          <Route path="/videos:id" element={<PrivateOutlet />}>
+          <Route path="/videos/:id" element={<PrivateOutlet />}>
             <Route element={<Videoplay />} />
           </Route>
           <Route path="/experts" element={<PrivateOutlet />}>
             <Route element={<Expert />} />
           </Route>
-          <Route path="/experts:id" element={<PrivateOutlet />}>
+          <Route path="/experts/:id" element={<PrivateOutlet />}>
             <Route element={<InfoPsi />} />
           </Route>
           <Route path="/profile" element={<PrivateOutlet />}>

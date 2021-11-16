@@ -80,13 +80,26 @@ const InfoPsi = () => {
                             </ul>
                         </div>
                         <div className="pt-12">
+                            <b>Keahlian Lain</b>
+                        </div>
+                        <div className="border-t-2 pt-6">
+                            {/* BUAT DATA TAMBAHANNYA ISI DIBAWAH SINI */}
+                            <ul className="list-inside list-disc">
+                                {
+                                    selectedPsi && selectedPsi.keahlian_lain && selectedPsi.keahlian_lain.map((psi) => {
+                                        return <li>{psi}</li>
+                                    })
+                                }
+                            </ul>
+                        </div>
+                        <div className="pt-12">
                             <b>Pendekatan Terapi</b>
                         </div>
                         <div className="border-t-2 pt-6">
                             {/* BUAT DATA TAMBAHANNYA ISI DIBAWAH SINI */}
                             <ul className="list-inside list-disc">
                                 {
-                                    selectedPsi && selectedPsi.keahlian && selectedPsi.keahlian.map((psi) => {
+                                    selectedPsi && selectedPsi.pendekatan_terapi && selectedPsi.pendekatan_terapi.map((psi) => {
                                         return <li>{psi}</li>
                                     })
                                 }
