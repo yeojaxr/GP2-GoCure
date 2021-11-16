@@ -23,7 +23,7 @@ const Register = (props) => {
             if(user.length !== 0){
                 const currentUser = user.find((u) => u.userLogged === true)
                 if(currentUser){
-                    navigate("/profile")
+                    navigate("/login")
                 }
             }
         }

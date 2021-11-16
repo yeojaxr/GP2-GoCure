@@ -5,36 +5,30 @@ import VideosImg from '../images/navbar/videos.svg'
 import ExpertsImg from '../images/navbar/experts.svg'
 import LogoutImg from '../images/navbar/logout.svg'
 import { Link } from 'react-router-dom'
+import { useUser } from "../context/user-context";
 
 const Navbar = () => {
+    const {user, dispatch} = useUser();
     return (
         <div>
             <div className="flex flex-col items-center">
-                <div className="p-2.5">
-                    <Link className="w-6 md:w-7 xl:w-8" to="/profile">
-                        <img className="w-6 md:w-7 xl:w-8" src={HomeImg} />
-                    </Link>
-                </div>
-                <div className="p-2.5">
-                    <Link className="w-6 md:w-7 xl:w-8" to="/blogs">
-                        <img className="w-6 md:w-7 xl:w-8" src={BlogsImg} />
-                    </Link>
-                </div>
-                <div className="p-2.5">
-                    <Link className="w-6 md:w-7 xl:w-8" to="/videos">
-                        <img className="w-6 md:w-7 xl:w-8" src={VideosImg} />
-                    </Link>
-                </div>
-                <div className="p-2.5">
-                    <Link className="w-6 md:w-7 xl:w-8" to="/experts">
-                        <img className="w-6 md:w-7 xl:w-8" src={ExpertsImg} />
-                    </Link>
-                </div>
-                <div className="pt-12 pb-2 px-2.5">
-                    <Link className="py-12" to="/">
-                        <img className="w-6 md:w-7 xl:w-8" src={LogoutImg} />
-                    </Link>
-                </div>
+                <Link className="pt-12 pb-3" to="/profile">
+                    <img className="w-6 md:w-7 xl:w-8" alt="home" src={HomeImg} />
+                </Link>
+                <Link className="py-3" to="/blogs">
+                    <img className="w-6 md:w-7 xl:w-8" alt="blogs" src={BlogsImg} />
+                </Link>
+                <Link className="py-3" to="/videos">
+                    <img className="w-6 md:w-7 xl:w-8" alt="video" src={VideosImg} />
+                </Link>
+                <Link className="py-3" to="/experts">
+                    <img className="w-6 md:w-7 xl:w-8" alt="experts" src={ExpertsImg} />
+                </Link>
+
+                <Link className="py-12" to="/">
+                    <img className="w-6 md:w-7 xl:w-8" alt="logout" src={LogoutImg} />
+                    {dispatch({type: "LOGOUT"})}
+                </Link>
             </div>
         </div>
     )

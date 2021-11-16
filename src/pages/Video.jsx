@@ -1,11 +1,9 @@
 import CardVideo from "../components/CardVideo";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
-import React, {useState, useEffect, useContext} from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
 import {LoadingPage} from "./LoadingPage"
-import { useNavigate } from "react-router-dom";
-import { useUser } from "../context/user-context";
 
 const Video = () => {
   const [videos, setVideos] = useState([]);
@@ -20,21 +18,6 @@ const Video = () => {
   }, []);
 
   console.log(videos)
-
-  const navigate = useNavigate();
-  const {user} = useUser();
-
-  // Return to landing page if user not login
-  useEffect(() => {
-    if(user){
-      if(user.length !== 0){
-        const currentUser = user.find((u) => u.userLogged === true)
-        if(currentUser){
-          navigate("/videos")
-        } else navigate("/")
-      } else navigate("/")
-    }
-  }, [user, navigate])
 
   // loading
   if(videos.length === 0){

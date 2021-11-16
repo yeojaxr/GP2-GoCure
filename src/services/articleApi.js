@@ -33,7 +33,6 @@ export default function useFetchArticle() {
 // Error Cannot Fetch Data
 export function useFetchVideo() {
   const [video, setVideo] = useState(null);
-  const [error, setError] = useState(null);
 
   async function fetchData() {
     let response = await axios
