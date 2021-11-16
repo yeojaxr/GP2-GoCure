@@ -26,6 +26,12 @@ const InfoPsi = () => {
         }
     },[psi, id]);
 
+    selectedPsi && selectedPsi.keahlian && selectedPsi.keahlian.map(asd => {
+        return console.log(asd)
+    })
+    
+    selectedPsi && console.log(selectedPsi.keahlian)
+
     return (
         <div>
             {/* PLACE PICTURE HERE */}
@@ -61,9 +67,31 @@ const InfoPsi = () => {
                         <div className="border-t-2 pt-6 pb-12">
                             {selectedPsi && selectedPsi.profil}
                         </div>
+                        <div>
+                            <b>Keahlian</b>
+                        </div>
                         <div className="border-t-2 pt-6">
                             {/* BUAT DATA TAMBAHANNYA ISI DIBAWAH SINI */}
-
+                            <ul className="list-inside list-disc">
+                                {
+                                    selectedPsi && selectedPsi.keahlian && selectedPsi.keahlian.map((psi) => {
+                                        return <li>{psi}</li>
+                                    })
+                                }
+                            </ul>
+                        </div>
+                        <div className="pt-12">
+                            <b>Pendekatan Terapi</b>
+                        </div>
+                        <div className="border-t-2 pt-6">
+                            {/* BUAT DATA TAMBAHANNYA ISI DIBAWAH SINI */}
+                            <ul className="list-inside list-disc">
+                                {
+                                    selectedPsi && selectedPsi.keahlian && selectedPsi.keahlian.map((psi) => {
+                                        return <li>{psi}</li>
+                                    })
+                                }
+                            </ul>
                         </div>
                     </div>
 
