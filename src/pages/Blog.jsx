@@ -1,16 +1,29 @@
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import useFetchArticle from "../services/articleApi";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import {LoadingPage} from "./LoadingPage"
+import { useNavigate } from "react-router-dom";
+import { useUser } from "../context/user-context";
 
 const Blog = () => {
   const { article } = useFetchArticle();
   console.log("article", article);
+  
   const navigate = useNavigate();
+  const {user, dispatch} = useUser();
+
+  useEffect(() => {
+    if(user){
+        if(user.length !== 0){
+            const currentUser = user.find((u) => u.userLogged === true)
+            if(currentUser){
+                navigate("/profile")
+            }
+        }
+    } else navigate("/")
+  }, [user, navigate])
   
   //  loading
   if(article == null){
