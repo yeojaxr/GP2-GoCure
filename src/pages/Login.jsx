@@ -65,7 +65,7 @@ const Login = (props) => {
                             Email
                           </label>
                           <input
-                            className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-gray-50 focus:border-gray-300"
                             placeholder="johndoe@mail.com"
                             id="email"
                             value={email}
@@ -84,7 +84,7 @@ const Login = (props) => {
                             Password
                           </label>
                           <input
-                            className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                            className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-gray-50 focus:border-gray-300"
                             placeholder="*********"
                             id="password"
                             value={password}
