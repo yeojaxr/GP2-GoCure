@@ -7,12 +7,12 @@ export default function useAuth() {
 
   useEffect(() => {
     if (user) {
-      if (user.length !== 0) {
-        const currentUser = user.find(
-          (u) => u.userLogged === true
-        );
-        currentUser && setLogin(true);
-      } else setLogin(false);
+        if (user.length !== 0) {
+            const currentUser = user.find((u) => u.userLogged === true);
+            if (currentUser) {
+                setLogin(true);
+            } else setLogin(false);
+        } else setLogin(false);
     } else setLogin(false);
   }, [isLogin, user]);
   return isLogin;

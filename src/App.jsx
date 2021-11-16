@@ -17,7 +17,7 @@ import useAuth from "./services/useAuth";
 
 function PrivateOutlet() {
   const auth = useAuth();
-  return auth ? <Outlet /> : <Navigate to="/" />;
+  return auth ? <Outlet /> : <Navigate to="/403" />;
 }
 
 function PrivateLandingPage() {
@@ -31,9 +31,11 @@ function App() {
       <main>
         <Routes>
 
-          <Route path="/" element={<PrivateLandingPage />}>
+          <Route path="/" element={<LandingPage />}/>
+
+          {/* <Route path="/" element={<PrivateLandingPage />}>
             <Route element={<LandingPage />} />
-          </Route>
+          </Route> */}
           <Route path="/register" element={<PrivateLandingPage />}>
             <Route element={<Register />} />
           </Route>
