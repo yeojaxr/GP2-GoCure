@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import BlogImg from "../images/profile/blog.svg"
 import VideoImg from "../images/profile/video.svg"
-import React from 'react';
+import React, {useState} from 'react';
 import { useBlog } from "../context/blog-context";
 import { useVideo } from "../context/video-context";
 import CardVideo from "../components/CardVideo";
@@ -11,7 +11,10 @@ import { useUser } from "../context/user-context";
 
 const Profile = () => {
     const {user} = useUser();
-    const currentUser = user.find((u) => u.userLogged === true)
+    const [userName, setUserName] = useState("");
+
+    const currentUser = user.find((u) => u.userLogged === true);
+    currentUser && setUserName(currentUser.name);
 
     const {likesBlog} = useBlog();
     const isBlogExist = likesBlog.filter(item => item.userLikes.like === true);
@@ -24,7 +27,7 @@ const Profile = () => {
             <div className="flex justify-center gap-x-4 lg:px-40 xl:px-60 2xl:px-96"> 
                 <div className="w-full">
                     <div>
-                        <Header hi="Hello" name={currentUser.name} pic="tojj.jpg" />
+                        <Header hi="Hello" name={userName} pic="tojj.jpg" />
                     </div>
                     <div className="pb-4 text-lg font-bold">
                         Blog that you liked

@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react'
 import Navbar from '../components/Navbar'
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Header from "../components/Header";
 
 const InfoPsi = () => {
     const { id } = useParams();
