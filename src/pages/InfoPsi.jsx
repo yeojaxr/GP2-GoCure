@@ -34,7 +34,7 @@ const InfoPsi = () => {
                     <div className="pt-0 md:pt-52 pl-5 md:pl-7 lg:pl-16 xl:pl-36 pr-8 md:pr-6 pb-12 md:pb-16">
                         <div className="pt-16 md:pt-56 pb-0 md:pb-4">
                             <div className="py-0 md:py-4 text-2xl md:text-3xl lg:text-4xl font-bold text-white">
-                                {selectedPsi && selectedPsi.Name}
+                                {selectedPsi && selectedPsi.name}
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@ const InfoPsi = () => {
                             Psikolog
                         </div>
                         <div className="border-t-2 pt-6">
-                            {selectedPsi && selectedPsi.Profil}
+                            {selectedPsi && selectedPsi.profil}
                         </div>
                     </div>
 
