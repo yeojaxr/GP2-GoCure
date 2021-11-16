@@ -3,6 +3,7 @@ import LoginImg from '../images/register.svg'
 import LogoImg from '../images/logo.svg'
 import { useUser } from "../context/user-context";
 import { useNavigate } from "react-router-dom";
+import Alert from '../components/Alert';
 
 const Register = (props) => {
     const [name, setName] = useState("");
@@ -11,6 +12,8 @@ const Register = (props) => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [userLogged, setLogged] = useState(false);
     const {user, dispatch} = useUser();
+    const [alert, setAlert] = useState(false);
+    const [alertMsg, setAlertMsg] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -29,14 +32,16 @@ const Register = (props) => {
     function handleRegister (e) {
         e.preventDefault();
         if (name === "" || email === "" || password === "" || confirmPassword === "") {
-            alert("Isi data terlebih dahulu")
+            setAlertMsg("Please fill in all the required fields (*)")
+            setAlert(true);
         }
         else if (password !== confirmPassword){
-            alert("Password yang anda masukan tidak sama.")
+            setAlertMsg("Password don't match.")
+            setAlert(true);
         }
         else{
             dispatch({ type: "REGISTER", name, email, password, userLogged });
-        console.log("user1", user)
+            setAlert(false);
         }
     };
 
@@ -52,7 +57,7 @@ const Register = (props) => {
                                 alt="" 
                             />
                             <div className="w-full">
-                                <div className="py-16 pl-6 md:pl-2 pr-6 md:pr-12">
+                                <div className="py-8 pl-6 md:pl-2 pr-6 md:pr-12">
                                     <div className="flex justify-center pb-6">
                                         <img 
                                             className="flex h-10" 
@@ -65,7 +70,7 @@ const Register = (props) => {
                                             {/* Form 1 */}
                                             <div className="flex flex-wrap pt-3">
                                                 <div className="w-full">
-                                                <label className="tracking-wide text-sm font-bold">Name</label>
+                                                <label className="tracking-wide text-sm font-bold">Name*</label>
                                                 <input
                                                     className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                                     placeholder="John Doe" id='name' value={name} onChange={(e) => setName(e.target.value)}
@@ -77,11 +82,11 @@ const Register = (props) => {
                                             {/* Form 2 */}
                                             <div className="flex flex-wrap pt-3">
                                                 <div className="w-full">
-                                                <label className="tracking-wide text-sm font-bold">Email</label>
+                                                <label className="tracking-wide text-sm font-bold">Email*</label>
                                                 <input
                                                     className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                                     placeholder="johndoe@mail.com" id='email' type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                                                />
+                                                    />
                                                 </div>
                                             </div>
                                         </div>
@@ -89,11 +94,11 @@ const Register = (props) => {
                                             {/* Form 3 */}
                                             <div className="flex flex-wrap pt-3">
                                                 <div className="w-full">
-                                                <label className="tracking-wide text-sm font-bold">Password</label>
+                                                <label className="tracking-wide text-sm font-bold">Password*</label>
                                                 <input
                                                     className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                                     placeholder="*********" id='password' type="password" value={password} onChange={(e) => setPassword(e.target.value)}
-                                                />
+                                                    />
                                                 </div>
                                             </div>
                                         </div>
@@ -101,14 +106,15 @@ const Register = (props) => {
                                             {/* Form 4 */}
                                             <div className="flex flex-wrap pt-3">
                                                 <div className="w-full">
-                                                <label className="tracking-wide text-sm font-bold">Confirm Password</label>
+                                                <label className="tracking-wide text-sm font-bold">Confirm Password*</label>
                                                 <input
                                                     className="text-gray-900 appearance-none block w-full bg-gray-100 border border-gray-100 rounded py-2 px-2 my-2 text-xs leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                                     placeholder="*********" id='confirmPassword' type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}
-                                                />
+                                                    />
                                                 </div>
                                             </div>
                                         </div>
+                                        {alert ? <Alert alertMsg={alertMsg}/> : ""}
                                         <div className="flex justify-center md:justify-start pt-8 md:pt-5">
                                             <button onClick={handleRegister} className="py-2.5 px-5 bg-purple-600 hover:bg-pink-600 rounded-md text-white text-sm font-bold">
                                                 Register

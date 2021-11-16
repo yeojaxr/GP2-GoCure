@@ -16,8 +16,8 @@ const Alert = (props) => {
         ></path>
       </svg>
       <p class="ml-3 text-sm text-purple-900">
-        <span class="font-medium">Important Note!</span>{" "}
-        <b>You have been logged in!</b>
+        {/* <span class="font-medium">Important Note!</span>{" "} */}
+        <b>{props.alertMsg}</b>
       </p>
     </div>
   );
