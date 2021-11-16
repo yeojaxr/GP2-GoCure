@@ -31,11 +31,11 @@ function App() {
       <main>
         <Routes>
 
-          <Route path="/" element={<LandingPage />}/>
+          {/* <Route path="/" element={<LandingPage />}/> */}
 
-          {/* <Route path="/" element={<PrivateLandingPage />}>
+          <Route path="/" element={<PrivateLandingPage />}>
             <Route element={<LandingPage />} />
-          </Route> */}
+          </Route>
           <Route path="/register" element={<PrivateLandingPage />}>
             <Route element={<Register />} />
           </Route>
