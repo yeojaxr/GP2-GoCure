@@ -4,8 +4,6 @@ import Header from "../components/Header";
 import React, {useState, useEffect} from 'react'
 import axios from "axios";
 import {LoadingPage} from "./LoadingPage"
-import { useNavigate } from "react-router-dom";
-import { useUser } from "../context/user-context";
 
 const Expert = () => {
 const [experts, setExperts] = useState([]);

@@ -3,6 +3,7 @@ import LoginImg from "../images/sign-in.svg";
 import LogoImg from "../images/logo.svg";
 import { useUser } from "../context/user-context";
 import { useNavigate, Link } from "react-router-dom";
+import Alert from '../components/Alert';
 
 const Login = (props) => {
   const {user, dispatch} = useUser();
@@ -12,32 +13,40 @@ const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [logSuccess, setLog] = useState(false);
-  const [checkEmail, setCheckEmail] = useState("");
-  const [checkPass, setCheckPass] = useState("");
+  const [currentUser, setCurrentUser] = useState("");
+  const [alertMsg, setAlertMsg] = useState("");
+  const [alert, setAlert] = useState(false);
 
   useEffect(() => {
-    console.log("userLocal login", user)
-    setLogged(true);
     if(user){
-      const currentUser = user.find((u) => u.userLogged === true)
-      if(currentUser){
-          navigate("/profile")
-          setLog(true);
+        if(user.length !== 0){
+            const currentUser = user.find((u) => u.email === email)
+            setCurrentUser(currentUser);
         }
-      }
-      else{
-        console.log("Please register from use effect")
-      }
-  }, [user, navigate])
+    }
+  }, [email, user])
       
   function handleLogin (e) {
     e.preventDefault();
-    console.log(userLogged)
-    setLog(true);
-
-    dispatch({ type: "LOGIN", email, password, userLogged });
-  };
-
+    if (email === "" || password === "") {
+        setAlertMsg("Please fill in all the required fields (*)")
+        setAlert(true);
+    }
+    else if (currentUser && currentUser.email === email){
+      if(currentUser && currentUser.password === password){
+        setLogged(true);
+        dispatch({ type: "LOGIN", email, password, userLogged });
+        navigate("/profile");
+      }
+      setAlertMsg("Please check your password")
+      setAlert(true);
+    }
+    else{
+      setAlertMsg("Your account does not exist, please register")
+      setAlert(true);
+    }
+  }
+  
   function redirectRegister() {
     return(
       <>
@@ -112,8 +121,9 @@ const Login = (props) => {
                         </div>
                       </div>
                     </div>
+                    {alert ? <Alert alertMsg={alertMsg}/> : ""}
                     <div className="flex justify-center md:justify-start pt-8 md:pt-3">
-                      { logSuccess ? redirectRegister() : ""}
+                      {/* { logSuccess ? redirectRegister() : ""} */}
                       <button
                         onClick={handleLogin}
                         className={"py-2.5 px-5 bg-purple-600 hover:bg-pink-600 rounded-md text-white text-sm font-bold"}

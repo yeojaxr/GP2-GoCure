@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import { useUser } from "../context/user-context";
 
 const NavbarRow = () => {
-    const {user, dispatch} = useUser();
+    const {dispatch} = useUser();
     function handleClick() {
         dispatch({type: "LOGOUT"})
     }
@@ -16,20 +16,20 @@ const NavbarRow = () => {
         <div>
             <div className="flex items-center py-3">
                 <Link className="pl-6 pr-2" to="/profile">
-                    <img className="w-6 md:w-7 xl:w-8" src={HomeImg} />
+                    <img className="w-6 md:w-7 xl:w-8" alt="home" src={HomeImg} />
                 </Link>
                 <Link className="px-2" to="/blogs">
-                    <img className="w-6 md:w-7 xl:w-8" src={BlogsImg} />
+                    <img className="w-6 md:w-7 xl:w-8" alt="blog" src={BlogsImg} />
                 </Link>
                 <Link className="px-2" to="/videos">
-                    <img className="w-6 md:w-7 xl:w-8" src={VideosImg} />
+                    <img className="w-6 md:w-7 xl:w-8" alt="video" src={VideosImg} />
                 </Link>
                 <Link className="px-2" to="/experts">
-                    <img className="w-6 md:w-7 xl:w-8" src={ExpertsImg} />
+                    <img className="w-6 md:w-7 xl:w-8" alt="experts" src={ExpertsImg} />
                 </Link>
 
                 <Link to="/" className="py-12" onClick={() => handleClick()}>
-                    <img className="w-6 md:w-7 xl:w-8" src={LogoutImg} />
+                    <img className="w-6 md:w-7 xl:w-8" alt="logout" src={LogoutImg} />
                 </Link>
             </div>
         </div>

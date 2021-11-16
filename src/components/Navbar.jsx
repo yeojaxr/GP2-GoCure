@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import { useUser } from "../context/user-context";
 
 const Navbar = () => {
-    const {user, dispatch} = useUser();
+    const {dispatch} = useUser();
     function handleClick() {
         dispatch({type: "LOGOUT"})
     }
