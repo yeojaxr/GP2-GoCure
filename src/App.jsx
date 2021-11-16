@@ -16,13 +16,8 @@ import InfoPsi from "./pages/InfoPsi";
 import useAuth from "./services/useAuth";
 
 function PrivateOutlet() {
-  const auth = !useAuth();
-  return auth ? <Outlet /> : <Navigate to="/403" />;
-}
-
-function PrivateLandingPage() {
   const auth = useAuth();
-  return auth ? <Outlet /> : <Navigate to="/profile" />;
+  return auth ? <Outlet /> : <Navigate to="/forbidden " />;
 }
 
 function App() {
@@ -31,26 +26,12 @@ function App() {
       <main>
         <Routes>
 
-          <Route path="/register" element={<Register />}/> */}
+          <Route path="/register" element={<Register />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/" element={<LandingPage />}/>
-
-          {/* 
-          <Route path="/" element={<PrivateLandingPage />}>
-            <Route element={<LandingPage />} />
-          </Route>
-
-          <Route path="/register" element={<PrivateLandingPage />}>
-            <Route element={<Register />} />
-          </Route>
-
-          <Route path="/login" element={<PrivateLandingPage />}>
-            <Route element={<Login />} />
-          </Route>
-          */}
-
+         
           <Route path="*" element={<PageNotFound />}/>
-          <Route path="/403" element={<ForbiddenPage />}/>
+          <Route path="/forbidden" element={<ForbiddenPage />}/>
           
           <Route path="/blogs" element={<PrivateOutlet />}>
             <Route element={<Blog />} />

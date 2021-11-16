@@ -3,35 +3,39 @@ export default function userReducer(user, action){
     switch (action.type) {
         case "REGISTER":
             const { name, email, password, userLogged } = action;
+            let message = "";
             if(user){
                 const userHasRegister = user.find((u) => u.email === email);
                 if (userHasRegister) {
-                    console.log("User Has Register, Please Login")
-                    return user;
+                    return [...user];
                 } else {
                     // If user doesn't exist return new array with new item appended
                     return [...user, { name, email, password, userLogged }]
                 }
-            } else console.log("error from reducer")
+            } else return user;
         break;
 
         case "LOGIN": {
             const { email, password } = action;
+            let message = "";
             if(user){
                 const userHasRegister = user.find((u) => u.email === email);
                 if (userHasRegister) {
                     const checkPassword = userHasRegister.password === password;
                     if(checkPassword){
-                        console.log("Login Success")
+                        message = "Login Success"
                         return user.map((u) =>
-                        u.email === email ? { ...u, userLogged: true } : u
+                        u.email === email ? { ...u, userLogged: true, message: message } : u
                         );
                     } else {
-                        console.log("Please Try Again")
+                        return user;
                     }
                 }
+                else {
+                    return user;
+                }
             } else {
-                console.log("Please create account")
+                return user;
             }
         }
         break;
@@ -44,7 +48,7 @@ export default function userReducer(user, action){
         
         case "CLEAR-USER": 
             if (user === undefined){
-                return [];
+                return user;
             } else {
                 return user;
             }

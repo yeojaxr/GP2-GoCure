@@ -4,7 +4,7 @@ import FeatureVideo from "../images/home/video.svg";
 import FeatureBlog from "../images/home/blogs.svg";
 import FeatureExpert from "../images/home/experts.svg";
 import FeatureList from "../components/FeatureList";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LogoImg from '../images/logo.svg';
 import SmallButton from "../components/SmallButton";
 import SmallText from "../components/SmallText";
@@ -13,6 +13,7 @@ import BgImg from "../images/bg-wave.svg";
 import Testimonial from "../components/Testimonial";
 import TestiList from "../components/TestiList";
 import { useUser } from "../context/user-context";
+import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
   const [image, setImage] = useState(FeatureBlog)
@@ -22,6 +23,20 @@ export default function LandingPage() {
 
   const {user} = useUser();
   let currUser = false;
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log("userLocal2", user)
+    if(user){
+        if(user.length !== 0){
+            const currentUser = user.find((u) => u.userLogged === true)
+            if(currentUser){
+                navigate("/profile")
+            }
+        }
+    }
+  }, [user, navigate])
 
   const currentUser = user.find((u) => u.userLogged === true)
   if (currentUser) {

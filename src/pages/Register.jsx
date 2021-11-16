@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import LoginImg from '../images/register.svg'
 import LogoImg from '../images/logo.svg'
 import { useUser } from "../context/user-context";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Alert from '../components/Alert';
 
 const Register = (props) => {
@@ -10,38 +10,44 @@ const Register = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+
     const [userLogged, setLogged] = useState(false);
     const {user, dispatch} = useUser();
     const [alert, setAlert] = useState(false);
     const [alertMsg, setAlertMsg] = useState("");
+    const [currentUser, setCurrentUser] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
-        console.log("userLocal2", user)
-        setLogged(true);
         if(user){
             if(user.length !== 0){
-                const currentUser = user.find((u) => u.userLogged === true)
-                if(currentUser){
-                    navigate("/login")
-                }
+                const currentUser = user.find((u) => u.email === email)
+                setCurrentUser(currentUser);
             }
         }
-    }, [user, navigate])
+    }, [email, user])
     
     function handleRegister (e) {
         e.preventDefault();
-        if (name === "" || email === "" || password === "" || confirmPassword === "") {
-            setAlertMsg("Please fill in all the required fields (*)")
+        if (currentUser) {
+            console.log("Have account")
+            setAlertMsg("You already have an account please login")
             setAlert(true);
         }
-        else if (password !== confirmPassword){
-            setAlertMsg("Password don't match.")
-            setAlert(true);
-        }
-        else{
-            dispatch({ type: "REGISTER", name, email, password, userLogged });
-            setAlert(false);
+        else {
+            if (name === "" || email === "" || password === "" || confirmPassword === "") {
+                setAlertMsg("Please fill in all the required fields (*)")
+                setAlert(true);
+            }
+            else if (password !== confirmPassword){
+                setAlertMsg("Password don't match.")
+                setAlert(true);
+            }
+            else{
+                dispatch({ type: "REGISTER", name, email, password, userLogged });
+                navigate("/login");
+                setAlert(false);
+            }
         }
     };
 
@@ -145,6 +151,13 @@ const Register = (props) => {
                                             <button onClick={handleRegister} className="py-2.5 px-5 bg-purple-600 hover:bg-pink-600 rounded-md text-white text-sm font-bold">
                                                 Register
                                             </button>
+                                        </div>
+                                        <div className="pt-2 justify-center flex md:justify-start">
+                                            <p className="text-sm pb-6">Have an account? 
+                                                <Link to="/login">
+                                                    <b> Login</b>
+                                                </Link>
+                                            </p>
                                         </div>
                                     </form>                                
                                 </div>
