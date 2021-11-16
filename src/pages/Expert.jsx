@@ -37,7 +37,7 @@ const [experts, setExperts] = useState([]);
                         experts.map((exp) => (
                             <PsiCard
                               key={exp.id}
-                              title={exp.Name}
+                              title={exp.name}
                               image={exp.imageUrl}
                               id={exp.id}
                               description="Psikolog"
