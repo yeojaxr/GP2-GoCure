@@ -5,11 +5,11 @@ import { useUser } from "../context/user-context";
 import { useNavigate } from "react-router-dom";
 
 const Register = (props) => {
-    const {user, dispatch} = useUser();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [userLogged, setLogged] = useState(false);
+    const {user, dispatch} = useUser();
     const navigate = useNavigate();
 
     useEffect(() => {
