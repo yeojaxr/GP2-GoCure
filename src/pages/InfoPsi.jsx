@@ -49,15 +49,21 @@ const InfoPsi = () => {
                 <div className="py-10 grid grid-cols-1 md:grid-cols-3 gap-x-6">
 
                     {/* CONTENT */}
+                    <div>
+                    <div className="pb-2 font-bold text-2xl">
+                        Profile Expert
+                    </div>
+                    <div className="pb-6 font-bold text-md">
+                        Psikolog
+                    </div>
+                    </div>
                     <div className="col-span-2 text-sm md:text-md leading-relaxed text-justify">
-                        <div className="pb-2 font-bold text-2xl">
-                            Profile Expert
-                        </div>
-                        <div className="pb-6 font-bold text-md">
-                            Psikolog
+                        <div className="border-t-2 pt-6 pb-12">
+                            {selectedPsi && selectedPsi.profil}
                         </div>
                         <div className="border-t-2 pt-6">
-                            {selectedPsi && selectedPsi.profil}
+                            {/* BUAT DATA TAMBAHANNYA ISI DIBAWAH SINI */}
+
                         </div>
                     </div>
 
