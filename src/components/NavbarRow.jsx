@@ -5,8 +5,10 @@ import VideosImg from '../images/navbar/videos.svg'
 import ExpertsImg from '../images/navbar/experts.svg'
 import LogoutImg from '../images/navbar/logout.svg'
 import { Link } from 'react-router-dom'
+import { useUser } from "../context/user-context";
 
 const NavbarRow = () => {
+    const {user, dispatch} = useUser();
     return (
         <div>
             <div className="flex items-center py-3">
@@ -25,6 +27,7 @@ const NavbarRow = () => {
 
                 <Link className="px-6" to="/">
                     <img className="w-6 md:w-7 xl:w-8" src={LogoutImg} />
+                    {dispatch({type: "LOGOUT"})}
                 </Link>
             </div>
         </div>
